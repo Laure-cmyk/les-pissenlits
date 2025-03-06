@@ -19,6 +19,7 @@ Nos jeux de données viennent d'InfoFlora, fondation d'utilité publique active 
 </details>
 
 <details><summary>English</summary>
+ 
 ## Context
  Our data sets come from InfoFlora, a public foundation active in the promotion and information of Switzerland's plants, and InfoSpecies, an umbrella organization of Data Centers and informations and Coordinations Centers for species conservation.
 
