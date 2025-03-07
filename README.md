@@ -16,12 +16,12 @@ Nos jeux de données viennent d'[InfoFlora](https://www.infoflora.ch/fr/), fonda
 
 ## Classification des données
 Le jeu de données que nous avons extrait d'Infoflora se compose de 4 catégories principales de données.
-**Qualitative : **
-    -Nominale : Cantons recensés
-    -Ordinale : Invasive / Potentiellement invasive
-**Quantitative : **
-    -Continue : Nombre d'observations
-    -Discrète : Première et dernière années d'observation
+**Qualitative :**
+    - Nominale : Cantons recensés
+    - Ordinale : Invasive / Potentiellement invasive
+**Quantitative :**
+    - Continue : Nombre d'observations
+    - Discrète : Première et dernière années d'observation
 
 ## Références
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
@@ -44,12 +44,12 @@ Le jeu de données que nous avons extrait d'Infoflora se compose de 4 catégorie
 
 ## Data classification
 We have established 4 main categories of data based on Infoflora dataset.
-**Qualitative : **
-    -Nominal : States registered
-    -Ordinal : Invasive / Potientially invasive
-**Quantitative : **
-    -Continuous : Number of observations
-    -Discrete : First and last year of observation
+**Qualitative :**
+    - Nominal : States registered
+    - Ordinal : Invasive / Potientially invasive
+**Quantitative :**
+    - Continuous : Number of observations
+    - Discrete : First and last year of observation
 
 ## References
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
