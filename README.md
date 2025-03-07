@@ -14,6 +14,15 @@ Nos jeux de données viennent d'[InfoFlora](https://www.infoflora.ch/fr/), fonda
 ## But
  À travers ce projet, nous souhaitons sensibiliser sur la menace posée par certaines plantes invasives envers les plantes indigènes ; et comment leur prolifération peut endommager l'éco-système.
 
+## Classification des données
+Le jeu de données que nous avons extrait d'Infoflora se compose de 4 catégories principales de données.
+**Qualitative : **
+    -Nominale : Cantons recensés
+    -Ordinale : Invasive / Potentiellement invasive
+**Quantitative : **
+    -Continue : Nombre d'observations
+    -Discrète : Première et dernière années d'observation
+
 ## Références
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
 [Poppy Fields](https://www.poppyfield.org/)  
@@ -32,6 +41,15 @@ Nos jeux de données viennent d'[InfoFlora](https://www.infoflora.ch/fr/), fonda
 
 ## Goal 
  Through this work, we aim to raise awareness on the threats posed by invasive plants on indigenous plants, and how the proliferation can damage the fragile ecosystem.
+
+## Data classification
+We have established 4 main categories of data based on Infoflora dataset.
+**Qualitative : **
+    -Nominal : States registered
+    -Ordinal : Invasive / Potientially invasive
+**Quantitative : **
+    -Continuous : Number of observations
+    -Discrete : First and last year of observation
 
 ## References
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
