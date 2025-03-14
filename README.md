@@ -23,6 +23,9 @@ Le jeu de données que nous avons extrait d'Infoflora se compose de 4 catégorie
     - Continue : Nombre d'observations\
     - Discrète : Première et dernière années d'observation\
 
+## Wireframe
+[Wireframe sur Figma](https://www.figma.com/design/HqSlZb7jxu5R9CDxij9aw6/Wireframe---pissenlits?node-id=87-98&t=QU4SEscYoUgJzmog-0)
+
 ## Références
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
 [Poppy Fields](https://www.poppyfield.org/)  
@@ -50,6 +53,9 @@ We have established 4 main categories of data based on Infoflora dataset.\
 **Quantitative :**\
     - Continuous : Number of observations\
     - Discrete : First and last year of observation\
+
+## Wireframe
+[Wireframe sur Figma](https://www.figma.com/design/HqSlZb7jxu5R9CDxij9aw6/Wireframe---pissenlits?node-id=87-98&t=QU4SEscYoUgJzmog-0
 
 ## References
 [Plants for Meadow Gardens](https://plants.cloudred.com/)  
