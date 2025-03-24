@@ -1,0 +1,116 @@
+﻿"taxon_id
+(Info Flora)";"
+Nom_scientifique";LIST_2021;Habitus;Name_DE;Nom_FR;Nome_IT;"
+Jura";"
+Plateau";"
+Versant N Alpes";"
+Alpes centrales O
+";"
+Alpes centrales E";Versant S Alpes;IFL 2014;"
+Annexe 2.1 (ODE)";"
+Annexe 2.2(ODE)"
+1000030;Acacia dealbata Link;INV;Ba;Falsche Mimose;Mimosa blanchâtre;Mimosa;;*;*;;;**;WL;;X
+1001150;Ailanthus altissima (Mill.) Swingle;INV;Ba;Götterbaum;Ailante;Ailanto;**;***;**;***;**;***;BL;X;
+1003230;Ambrosia artemisiifolia L.;INV;Kr;Aufrechtes Traubenkraut;Ambroisie à feuilles d'armoise;Ambrosia con foglie di artemisia;**;***;**;**;**;***;BL;X;
+1003320;Amorpha fruticosa L.;INV;St;Bastardindigo;Amorphe buissonnante;Indaco bastardo;*;*;*;;*;**;BL;;X
+1005150;Artemisia verlotiorum Lamotte;INV;Kr;Verlotscher Beifuss;Armoise des frères Verlot;Assenzio dei fratelli Verlot;**;***;**;**;*;***;BL;;X
+1005240;Asclepias syriaca L.;INV;Kr;Syrische Seidenpflanze;Asclépiade de Syrie;Albero della seta;*;**;*;*;*;*;BL;X;
+1005710;Aster novi-belgii aggr. ;INV;Kr;Neubelgische Aster;Aster de la Nouvelle-Belgique;Astro americano;*;**;**;*;*;*;WL;;X
+1005750;Aster novi-belgii aggr. - Aster ×salignus Willd. [Nur als Aggregat behandelt];INV;Kr;Weiden-Aster;Aster à feuilles de saule;Astro a foglie di salice;/;/;/;/;/;/;/;;X
+1005760;Aster novi-belgii aggr. - Aster ×versicolor Willd. [Nur als Aggregat behandelt];INV;Kr;Gescheckte Aster;Aster versicolore;Astro cangiante;/;/;/;/;/;/;/;;X
+1005680;Aster novi-belgii aggr. - Aster lanceolatus Willd. [Nur als Aggregat behandelt];INV;Kr;Lanzettblättrige Aster;Aster lancéolé;Astro lanceolato;/;/;/;/;/;/;/;;X
+1005720;Aster novi-belgii aggr. - Aster novi-belgii L. [Nur als Aggregat behandelt];INV;Kr;Neubelgische Aster;Aster de la Nouvelle-Belgique;Astro americano;/;/;/;/;/;/;/;;X
+1005740;Aster novi-belgii aggr. - Aster parviflorus Nees [Nur als Aggregat behandelt];INV;Kr;Tradescants Aster;Aster de Tradescant;Astro di Tradescant;/;/;/;/;/;/;/;;X
+1007560;Broussonetia papyrifera (L.) Vent.;INV;Ba;Papiermaulbeerbaum;Mûrier de Chine;Gelso da carta;;*;*;;;*;AL;;X
+1007600;Buddleja davidii Franch.;INV;St;Schmetterlingsstrauch;Buddléia de David;Buddleja;***;***;***;***;***;***;BL;;X
+1007660;Bunias orientalis L.;INV;Kr;Glattes Zackenschötchen;Bunias d'Orient;Cascellore orientale;***;***;**;***;**;*;BL;;X
+1010746;Celastrus orbiculatus Thunb.;INV;Li;Rundblättriger Baumwürger;Bourreau des arbres asiatique;Celastro;;*;*;;;*;AL;X;
+1013170;Cornus sericea L.;INV;St;Seidiger Hornstrauch;Cornouiller soyeux;Corniolo serico;**;***;***;*;*;*;WL;;X
+1013440;Cotoneaster horizontalis Decne.;INV;St;Korallenstrauch;Cotonéaster horizontal;Cotognastro orizzontale;**;***;**;**;*;*;AL;;X
+1016360;Elodea canadensis Michx.;INV;Wa;Kanadische Wasserpest;Elodée du Canada;Peste d'acqua comune;**;***;***;**;*;*;BL;X;
+1016380;Elodea nuttallii (Planch.) H. St. John;INV;Wa;Nuttalls Wasserpest;Elodée de Nuttall;Peste d'acqua di Nuttall;*;***;***;*;*;**;BL;X;
+1017510;Erigeron annuus (L.) Desf.;INV;Kr;Einjähriges Berufkraut;Vergerette annuelle;Cespica annua;***;***;***;***;***;***;BL;;X
+1020280;Galega officinalis L.;INV;Kr;Geissraute;Galéga officinal;Capraggine comune;*;***;*;*;;*;WL;;X
+1021800;Glyceria striata (Lam.) Hitchc.;INV;Gr;Gestreiftes Süssgras;Glycérie striée;Gramignone striato;*;**;**;;*;*;KL;;X
+1022310;Helianthus tuberosus L.;INV;Kr;Topinambur;Topinambour;Girasole del Canada;*;**;*;*;*;**;WL;;
+1022580;Heracleum mantegazzianum Sommier & Levier;INV;Kr;Riesen-Bärenklau;Berce du Caucase;Panace di Mantegazza;**;***;***;***;***;***;BL;X;
+1024410;Impatiens glandulifera Royle;INV;Kr;Drüsiges Springkraut;Impatiente glanduleuse;Balsamina ghiandolosa;***;***;***;***;***;***;BL;X;
+1025620;Lagarosiphon major (Ridl.) Moss;INV;Wa;Schmalrohr;Grand lagarosiphon;Peste d'acqua arcuata;;*;*;;;*;AL;X;
+1027410;Lonicera henryi Hemsl.;INV;Li;Henrys Geissblatt;Chèvrefeuille de Henry;Caprifoglio di Henry;*;***;**;;;*;BL;;X
+1027420;Lonicera japonica Thunb.;INV;Li;Japanisches Geissblatt;Chèvrefeuille du Japon;Caprifoglio giapponese;*;***;*;*;;***;BL;;X
+1027595;Ludwigia ×kentiana E. J. Clement;INV;Wa;Kents Heusenkraut;Ludwigie de Kent;Porracchia di Kent;;**;;;;;AL;X;
+1027570;Ludwigia grandiflora (Michx.) Greuter & Burdet;INV;Wa;Grossblütiges Heusenkraut;Ludwigie à grandes fleurs;Porracchia a fiori grandi;;*;;;;;BL;X;
+1027640;Lupinus polyphyllus Lindl.;INV;Kr;Vielblättrige Lupine;Lupin à folioles nombreuses;Lupino fogliuto;*;**;**;***;***;**;BL;;X
+1029880;Myriophyllum aquaticum (Vell.) Verdc.;INV;Wa;Brasilianisches Tausendblatt;Myriophylle aquatique;Millefoglio americano;;**;*;;;;BL;X;
+1029890;Myriophyllum heterophyllum Michx.;INV;Wa;Verschiedenblättriges Tausendblatt;Myriophylle à feuilles de deux formes;Millefoglio a due forme di foglie;;*;;;;;AL;X;
+1032645;Parthenocissus quinquefolia aggr.;INV;Li;Fünffingerige Jungfernrebe;Vigne vierge à cinq folioles;Vite del Canadà comune;*;**;*;*;*;**;/;;X
+1032640;Parthenocissus quinquefolia aggr. - Parthenocissus inserta (A. Kern.) Fritsch;INV;Li;Gewöhnliche Jungfernrebe;Vigne vierge commune;Vite del Canadà domestica;**;***;**;**;*;**;WL;;X
+1032650;Parthenocissus quinquefolia aggr. - Parthenocissus quinquefolia (L.) Planch.;INV;Li;Fünffingerige Jungfernrebe;Vigne vierge à cinq folioles;Vite del Canadà a cinque foglie;*;**;*;*;*;**;NEW;;X
+1033485;Phyllostachys aurea Rivière & C. Rivière;INV;Gr;Gold-Bambus;Bambou doré;Bambù dorato;;*;*;;;*;AL;;X
+1035150;Polygonum polystachyum Meisn.;INV;Kr;Vielähriger Knöterich;Renouée à épis nombreux;Poligono con spighe numerose;*;**;**;*;*;**;BL;X;
+1036590;Prunus laurocerasus L.;INV;St;Kirschlorbeer;Laurier-cerise;Lauroceraso;***;***;***;***;*;***;BL;;X
+1036660;Prunus serotina Ehrh.;INV;Ba;Herbst-Traubenkirsche;Merisier tardif;Pruno autunnale;*;**;*;*;;**;BL;;X
+1036720;Pseudosasa japonica (Steud.) Nakai;INV;Gr;Japanischer Bambus;Bambou du Japon;Pseudosasa giapponese;;*;*;;;*;AL;;X
+1036830;Pueraria lobata (Willd.) Ohwi;INV;Li;Kopoubohne;Puéraire hérissée;Kudzu, Pueraria irsuta;*;*;;;;**;BL;X;
+1038135;Reynoutria japonica aggr. ;INV;Kr;Staudenknöterich;Renouée;Poligono asiatico;***;***;***;**;***;***;BL;X;
+1038160;Reynoutria japonica aggr. - Reynoutria ×bohemica Chrtek & Chrtková;INV;Kr;Bastard-Staudenknöterich;Renouée de Bohême;Poligono di Boemia, poligono ibrido;**;**;*;*;*;**;BL;X;
+1038140;Reynoutria japonica aggr. - Reynoutria japonica Houtt.;INV;Kr;Japanischer Staudenknöterich;Renouée du Japon;Poligono del Giappone;***;***;***;***;**;***;BL;X;
+1038150;Reynoutria japonica aggr. - Reynoutria sachalinensis (F. Schmidt) Nakai;INV;Kr;Sachalin-Staudenknöterich;Renouée de Sakhaline;Poligono di Sachalin;*;**;*;*;**;*;BL;X;
+1038390;Rhus typhina L.;INV;St;Essigbaum;Sumac;Sommacco maggiore;**;***;***;***;***;***;BL;X;
+1038500;Robinia pseudoacacia L.;INV;Ba;Robinie;Robinier;Robinia;***;***;***;***;**;***;BL;;
+1039160;Rubus armeniacus Focke;INV;Li;Armenische Brombeere;Ronce d'Arménie;Rovo d'Armenia;***;***;***;**;**;**;BL;;X
+1039780;Rubus phoenicolasius Maxim.;INV;Li;Rotborstige Himbeere;Framboisier du Japon;Lampone del Giappone;*;**;*;;;**;AL;;X
+1043020;Sedum spurium M. Bieb.;INV;Su;Kaukasus-Fettkraut;Orpin bâtard;Borracina caucasica;**;***;**;*;*;*;WL;;X
+1043030;Sedum stoloniferum S. G. Gmel.;INV;Su;Ausläuferbildendes Fettkraut;Orpin stolonifère;Borracina stolonifera;*;**;**;*;;*;WL;;X
+1043360;Senecio inaequidens DC.;INV;Kr;Südafrikanisches Greiskraut;Séneçon sud-africain;Senecione sudafricano;***;***;***;***;***;**;BL;X;
+1043850;Sicyos angulatus L.;INV;Li;Haargurke;Sicyos anguleux;Sicios angoloso;*;;;;;**;BL;X;
+1044575;Solidago canadensis aggr. ;INV;Kr;Kanadische Goldrute;Solidage du Canada;Verga d'oro americana;***;***;***;***;***;**;/;X;
+1044580;Solidago canadensis aggr. - Solidago canadensis L.;INV;Kr;Kanadische Goldrute;Solidage du Canada;Verga d'oro del Canada;***;***;***;***;**;***;BL;X;
+1044590;Solidago canadensis aggr. - Solidago gigantea Aiton;INV;Kr;Spätblühende Goldrute;Solidage géant;Verga d'oro maggiore;***;***;***;**;**;***;BL;X;
+1047080;Toxicodendron radicans (L.) Kuntze;INV;Li;Kletternder Giftsumach;Arbre à la gale;Edera velenosa;;;;;;*;BL;X;
+1047110;Trachycarpus fortunei (Hook.) H. Wendl.;INV;Ba;Fortunes Hanfpalme;Palmier chanvre;Palma di Fortune;*;***;**;*;*;***;BL;;X
+1000020;Abutilon theophrasti Medik.;P_INV;Kr;Chinesische Samtpappel;Abutilon de Théophraste;Cencio molle;*;**;*;;;*;BL;;
+1000740;Actinidia chinensis Planch.;P_INV;Li;Kiwi;Kiwi;Kiwi;*;*;*;*;;**;AL;;
+1001240;Akebia quinata (Houtt.) Decne.;P_INV;Li;Fingerblättrige Akebie;Akébie à cinq feuilles;Akebia a cinque foglie;;*;*;;;*;AL;;
+1003260;Ambrosia trifida L.;P_INV;Kr;Dreispaltige Ambrosie;Ambroisie trifide;Ambrosia trifida;*;*;;;;;AL;X;
+1004590;Aralia elata (Miq.) Seem.;P_INV;St;Japanische Aralie;Aralie élevée;Angelica del giappone;;**;*;*;;;AL;;
+1006330;Azolla filiculoides Lam.;P_INV;Wa;Grosser Algenfarn;Azolla fausse filicule;Azolla maggiore;;*;;;;;AL;;X
+1006480;Bassia scoparia (L.) A. J. Scott;P_INV;Kr;Besen-Radmelde;Bassie à balais;Granata comune;*;*;;**;*;;WL;;
+1007490;Bromus riparius Rehmann;P_INV;Gr;Ufer-Trespe;Brome des rivages;Forasacco delle ripe;*;**;**;*;*;*;AL;;
+1012100;Chorispora tenella (Pall.) DC.;P_INV;Kr;Zarte Gliederschote;Chorispora délicate;Corispora delicata;;*;;**;*;;AL;;
+1014370;Cyperus esculentus L.;P_INV;Gr;Essbares Zypergras;Souchet comestible;Zigolo dolce;*;***;*;;*;**;BL;;
+1015410;Diospyros lotus L.;P_INV;Ba;Lotuspflaume;Plaqueminier lotier;Albero di Sant'Andrea;*;*;*;;;**;NEW;;
+1016370;Elodea densa (Planch.) Casp. ;P_INV;Wa;Dichtblättrige Wasserpest;Elodée dense;Peste d'acqua maggiore;;*;*;*;;*;AL;X;
+1017580;Erigeron karvinskianus DC.;P_INV;Kr;Karvinskis Berufkraut;Vergerette mucronée;Cespica karvinskiana;*;**;**;;*;**;AL;;
+1018070;Euonymus fortunei (Turcz.) Hand.-Mazz.;P_INV;Li;Kletter-Spindelstrauch;Fusain de fortune;Evonimo di Fortune;*;*;*;;;*;NEW;;
+1024390;Impatiens balfourii Hook. f.;P_INV;Kr;Balfours Springkraut;Impatiente bicolore;Balsamina di Balfour;*;**;*;**;*;**;WL;;
+1027470;Lonicera pileata Oliv.;P_INV;St;Immergrüne Kriech-Heckenkirsche;Chèvrefeuille toujours vert rampant;Caprifoglio sempreverde strisciante;**;***;**;*;;*;AL;;
+1029320;Miscanthus sinensis Andersson;P_INV;Gr;Chinaschilf;Roseau de Chine, Eulalie;Eulalia cinese;*;**;*;*;;*;AL;;
+1030090;Nassella tenuissima (Trin.) Barkworth;P_INV;Gr;Zartes Federgras;Cheveux d'Ange;Lino delle fate messicano;*;**;*;*;;*;AL;;
+1030605;Oenanthe javanica DC.;P_INV;Wa;Wasserfenchel;Persil japonais;Finocchio acquatico di Giava;;;;;;*;AL;;X
+1031230;Opuntia humifusa (Raf.) Raf.;P_INV;Su;Gemeiner Feigenkaktus;Figuier d'Inde;Fico d'India nano;*;*;*;**;;*;WL;;
+1031270;Opuntia phaeacantha Engelm.;P_INV;Su;Mattstacheliger Feigenkaktus;Oponce à épines sombres;Fico d'India a spine brune;;*;*;**;;*;NEW;;
+1032730;Paulownia tomentosa (Thunb.) Steud.;P_INV;Ba;Blauglockenbaum;Paulownia;Paulownia;*;***;**;**;*;***;WL;;X
+1033780;Phytolacca americana L.;P_INV;Kr;Amerikanische Kermesbeere;Raisin d'Amérique;Cremesina uva turca;*;**;*;*;*;***;WL;;
+1038810;Rosa multiflora Thunb.;P_INV;St;Vielblütige Rose;Rosier à fleurs nombreuses;Rosa multiflora;*;***;*;;;*;AL;;
+1040510;Sagittaria latifolia Willd.;P_INV;Wa;Breitblättriges Pfeilkraut;Sagittaire à larges feuilles;Sagittaria americana;*;**;*;*;*;*;WL;;X
+1044380;Solanum carolinense L.;P_INV;Kr;Carolina-Nachtschatten;Morelle de Caroline;Morella della Carolina;;*;;;;*;BL;;
+1044600;Solidago graminifolia (L.) Salisb.;P_INV;Kr;Grasblättrige Goldrute;Solidage à feuilles de graminée;Verga d'oro a foglie graminacee;;**;*;;;;AL;X;
+1044850;Sorghum halepense (L.) Pers.;P_INV;Gr;Wilde Mohrenhirse;Sorgho d'Alep;Sorgo selvatico, Sorgo d'Aleppo;*;**;**;*;*;**;AL;;
+1045140;Sporobolus indicus (L.) R. Br.;P_INV;Gr;Indisches Fallsamengras;Sporobole d'Inde;Gramigna d'India;*;**;*;;;**;AL;;
+1045730;Symphoricarpos albus (L.) S. F. Blake;P_INV;St;Schneebeere;Symphorine blanche;Lacrime d'Italia;**;***;**;*;*;*;WL;;
+1049570;Viburnum rhytidophyllum Hemsl.;P_INV;St;Runzelblättriger Schneeball;Viorne rugueuse;Viburno rugoso;**;***;**;*;*;*;AL;;
+1050423;Vitis riparia aggr. ;P_INV;Li;Ufer-Rebe;Vigne des rivages;Vite riparia, vite delle rive;;*;;*;;*;NEW;;
+1050424;Vitis riparia Michx. [nur als Aggregat behandelt];P_INV;Li;Ufer-Rebe;Vigne des rivages;Vite delle rive;/;/;/;/;/;/;AL;;
+1003235;Ambrosia confertiflora DC.;Zu_ERW;Kr;Weichblättrige Ambrosie;Ambroisie à feuilles molles;Ambrosia a foglie morbide;_;_;_;_;_;_;AL;X;
+1003250;Ambrosia psilostachya DC.;Zu_ERW;Kr;Stauden-Ambrosie;Ambroisie à épis glabres;Ambrosia con spighe rade;_;_;_;_;_;_;AL;X;
+1007870;Cabomba caroliniana A. Gray;Zu_ERW;Wa;Karolina-Haarnixe;Cabomba, Évantail de Caroline;Cabomba della Carolina;_;_;_;_;_;_;BL;X;
+1013530;Crassula helmsii (Kirk) Cockayne;Zu_ERW;Wa;Nadelkraut;Crassule de Helm;Erba grassa di Helms;_;_;_;_;_;_;BL;X;
+1016050;Echinocystis lobata (Michx.) Torr. & A. Gray;Zu_ERW;Li;Stachelgurke;Concombre sauvage;Sicios lobata;_;_;_;_;_;_;BL;;X
+1023848;Humulus japonicus Siebold & Zucc. [Syn. H. scandens (Lour.) Merr.];Zu_ERW;Li;Japanischer Hopfen;Houblon du Japon;Luppolo giapponese;_;_;_;_;_;_;AL;X;
+1023940;Hydrocotyle ranunculoides L. f.;Zu_ERW;Wa;Grosser Wassernabel;Hydrocotyle fausse renoncule;Soldinella reniforme;_;_;_;_;_;_;BL;X;
+1027590;Ludwigia peploides (Kunth) P. H. Raven;Zu_ERW;Wa;Flutendes Heusenkraut;Jussie rampante;Ludwigia peploide;_;_;_;_;_;_;BL;X;
+1030095;Nassella trichotoma (Nees) Arechav. ;Zu_ERW;Gr;Argentinisches Federgras;Cheveux d'Ange d'Argentine;Lino delle fate d'Argentina;_;_;_;_;_;_;AL;;
+1032975;Pennisetum setaceum (Forssk.) Chiov.;Zu_ERW;Gr;Afrikanisches Lampenputzergras;Herbe aux écouvillions d'Afrique;Penniseto allungato;_;_;_;_;_;_;AL;;X
+1035135;Polygonum perfoliatum L.;Zu_ERW;Li;Durchwachsener Knöterich;Renouée perfoliée;Poligono perfogliato;_;_;_;_;_;_;AL;X;
+1041250;Salvinia molesta D. S. Mitch. §;Zu_ERW;Wa;Lästige Schwimmfarn;Salvinie géante;Erba pesce gigante ;_;_;_;_;_;_;KL;X;
