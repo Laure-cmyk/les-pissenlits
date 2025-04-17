@@ -1,5 +1,6 @@
 /dist
 /node_modules
+/datas/selected_neophytes_ch.json
 
 .DS_Store
 .tool-versions
