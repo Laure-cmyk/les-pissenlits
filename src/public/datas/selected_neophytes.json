@@ -1,0 +1,355 @@
+[
+  {
+    "taxon_id": 1007600,
+    "Nom_scientifique": "Buddleja davidii Franch.",
+    "LIST_2021": "INV",
+    "Habitus": "Buisson",
+    "IFL 2014": "BlackList",
+    "Description": "",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "Espèce Interdite",
+    "Name": {
+      "Name_DE": "Schmetterlingsstrauch",
+      "Nom_FR": "Buddléia de David",
+      "Nome_IT": "Buddleja"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1017510,
+    "Nom_scientifique": "Erigeron annuus (L.) Desf.",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "Espèce Interdite",
+    "Name": {
+      "Name_DE": "Einjähriges Berufkraut",
+      "Nom_FR": "Vergerette annuelle",
+      "Nome_IT": "Cespica annua"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1022580,
+    "Nom_scientifique": "Heracleum mantegazzianum Sommier & Levier",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Riesen-Bärenklau",
+      "Nom_FR": "Berce du Caucase",
+      "Nome_IT": "Panace di Mantegazza"
+    },
+    "Observations": {
+      "Jura": "51-500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1024410,
+    "Nom_scientifique": "Impatiens glandulifera Royle",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Drüsiges Springkraut",
+      "Nom_FR": "Impatiente glanduleuse",
+      "Nome_IT": "Balsamina ghiandolosa"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1036590,
+    "Nom_scientifique": "Prunus laurocerasus L.",
+    "LIST_2021": "INV",
+    "Habitus": "Buisson",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "Espèce Interdite",
+    "Name": {
+      "Name_DE": "Kirschlorbeer",
+      "Nom_FR": "Laurier-cerise",
+      "Nome_IT": "Lauroceraso"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "1-50",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1000740,
+    "Nom_scientifique": "Actinidia chinensis Planch.",
+    "LIST_2021": "P_INV",
+    "Habitus": "Liane",
+    "IFL 2014": "Non évaluée",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Kiwi",
+      "Nom_FR": "Kiwi",
+      "Nome_IT": "Kiwi"
+    },
+    "Observations": {
+      "Jura": "1-50",
+      "Plateau": "1-50",
+      "Versant N Alpes": "1-50",
+      "Alpes centrales O": "1-50",
+      "Alpes centrales E": "",
+      "Versant S Alpes": "51-500"
+    }
+  },
+  {
+    "taxon_id": 1038140,
+    "Nom_scientifique": "Reynoutria japonica aggr. - Reynoutria japonica Houtt.",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Japanischer Staudenknöterich",
+      "Nom_FR": "Renouée du Japon",
+      "Nome_IT": "Poligono del Giappone"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "51-500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1038390,
+    "Nom_scientifique": "Rhus typhina L.",
+    "LIST_2021": "INV",
+    "Habitus": "Buisson",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Essigbaum",
+      "Nom_FR": "Sumac",
+      "Nome_IT": "Sommacco maggiore"
+    },
+    "Observations": {
+      "Jura": "51-500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1038500,
+    "Nom_scientifique": "Robinia pseudoacacia L.",
+    "LIST_2021": "INV",
+    "Habitus": "Arbre",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Robinie",
+      "Nom_FR": "Robinier",
+      "Nome_IT": "Robinia"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "51-500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1043360,
+    "Nom_scientifique": "Senecio inaequidens DC.",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Südafrikanisches Greiskraut",
+      "Nom_FR": "Séneçon sud-africain",
+      "Nome_IT": "Senecione sudafricano"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "51-500"
+    }
+  },
+  {
+    "taxon_id": 1047110,
+    "Nom_scientifique": "Trachycarpus fortunei (Hook.) H. Wendl.",
+    "LIST_2021": "INV",
+    "Habitus": "Arbre",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "Espèce Interdite",
+    "Name": {
+      "Name_DE": "Fortunes Hanfpalme",
+      "Nom_FR": "Palmier chanvre",
+      "Nome_IT": "Palma di Fortune"
+    },
+    "Observations": {
+      "Jura": "1-50",
+      "Plateau": "> 500",
+      "Versant N Alpes": "51-500",
+      "Alpes centrales O": "1-50",
+      "Alpes centrales E": "1-50",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1044575,
+    "Nom_scientifique": "Solidago canadensis aggr.",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "/",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Kanadische Goldrute",
+      "Nom_FR": "Solidage du Canada",
+      "Nome_IT": "Verga d'oro americana"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "> 500",
+      "Alpes centrales E": "> 500",
+      "Versant S Alpes": "51-500"
+    }
+  },
+  {
+    "taxon_id": 1044590,
+    "Nom_scientifique": "Solidago canadensis aggr. - Solidago gigantea Aiton",
+    "LIST_2021": "INV",
+    "Habitus": "Herbacée",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Spätblühende Goldrute",
+      "Nom_FR": "Solidage géant",
+      "Nome_IT": "Verga d'oro maggiore"
+    },
+    "Observations": {
+      "Jura": "> 500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "51-500",
+      "Alpes centrales E": "51-500",
+      "Versant S Alpes": "> 500"
+    }
+  },
+  {
+    "taxon_id": 1016360,
+    "Nom_scientifique": "Elodea canadensis Michx.",
+    "LIST_2021": "INV",
+    "Habitus": "Plante aquatique",
+    "IFL 2014": "BlackList",
+    "Annexe 2.1 (ODE)": "Espèce Interdite",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Kanadische Wasserpest",
+      "Nom_FR": "Elodée du Canada",
+      "Nome_IT": "Peste d'acqua comune"
+    },
+    "Observations": {
+      "Jura": "51-500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "> 500",
+      "Alpes centrales O": "51-500",
+      "Alpes centrales E": "1-50",
+      "Versant S Alpes": "1-50"
+    }
+  },
+  {
+    "taxon_id": 1044850,
+    "Nom_scientifique": "Sorghum halepense (L.) Pers.",
+    "LIST_2021": "P_INV",
+    "Habitus": "Graminéen",
+    "IFL 2014": "Non évaluée",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "",
+    "Name": {
+      "Name_DE": "Wilde Mohrenhirse",
+      "Nom_FR": "Sorgho d'Alep",
+      "Nome_IT": "Sorgo selvatico, Sorgo d'Aleppo"
+    },
+    "Observations": {
+      "Jura": "1-50",
+      "Plateau": "51-500",
+      "Versant N Alpes": "51-500",
+      "Alpes centrales O": "1-50",
+      "Alpes centrales E": "1-50",
+      "Versant S Alpes": "51-500"
+    }
+  },
+  {
+    "taxon_id": 1043020,
+    "Nom_scientifique": "Sedum spurium M. Bieb.",
+    "LIST_2021": "INV",
+    "Habitus": "Succulent",
+    "IFL 2014": "WatchList",
+    "Annexe 2.1 (ODE)": "",
+    "Annexe 2.2(ODE)": "Espèce Interdite",
+    "Name": {
+      "Name_DE": "Kaukasus-Fettkraut",
+      "Nom_FR": "Orpin bâtard",
+      "Nome_IT": "Borracina caucasica"
+    },
+    "Observations": {
+      "Jura": "51-500",
+      "Plateau": "> 500",
+      "Versant N Alpes": "51-500",
+      "Alpes centrales O": "1-50",
+      "Alpes centrales E": "1-50",
+      "Versant S Alpes": "1-50"
+    }
+  }
+]
