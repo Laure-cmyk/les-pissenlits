@@ -1,62 +1,123 @@
-@import 'normalize.css';
+@import "normalize.css";
 
-
-body{
-    overflow-x: hidden;
-    height: 100vh;
-    --background-color: #EDDDC8;
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  --background-color: #edddc8;
 }
 
-main{
-    height: 100%;
-    margin: 0;
+main {
+  height: 100%;
+  margin: 0;
 }
 
-section{
-    width: 100%;
-    height: 100%;
-    margin:0;
-    background-color: var(--background-color);
+section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--background-color);
 }
 
-#introduction{
-    text-align: center;
-    font-size:2em;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+#introduction {
+  text-align: center;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #general-info {
-    width: 100%;
-    position: relative; /* Change to fixed for pinning */
-    top: 0; /* Ensure it stays at the top of the viewport */
-    left: 0;
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Ensure proper layout for child elements */
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  position: relative; /* Change to fixed for pinning */
+  top: 0; /* Ensure it stays at the top of the viewport */
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Ensure proper layout for child elements */
+  justify-content: center;
+  align-items: center;
 }
 
 #general-info .card {
-    position: absolute; /* Ensure cards can move independently */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%; /* Adjust width for better layout */
-    height: 80%; /* Adjust height for better layout */
-    background-color: var(--background-color);
+  position: absolute; /* Ensure cards can move independently */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Adjust width for better layout */
+  height: 80%; /* Adjust height for better layout */
+  background-color: var(--background-color);
 }
 
-em{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.5em;
+em {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-#map{
-    background-color: red;
+#map {
+  background-color: red;
+}
+
+#specific-plant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#plants-list {
+  list-style-type: none;
+  overflow-y: auto; /* Active le scroll vertical */
+  max-height: 150px; /* Limite la hauteur */
+  padding: 10px;
+}
+
+/* Cache la barre de défilement verticale*/
+#plants-list::-webkit-scrollbar{
+    display: none;
+}
+
+.plant-item{
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #e3f2fd;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.plant-item.active {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Style des boutons de défilement */
+.scroll-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #bbdefb;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+
+specific-plant {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+specific-plant #plant-svg {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+specific-plant #plant-svg svg {
+  width: 200px;
+  height: 200px;
 }
