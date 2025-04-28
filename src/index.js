@@ -53,7 +53,7 @@ const tlGeneralInfo = gsap.timeline({
     start: "top top", // Start when the top of #general-info hits the center of viewport
     end: "+=300%", // Adjust this value based on how long you want the animation to last
     scrub: 1,
-    pin:true,
+    pin: true,
     markers: true, // Remove in production
   },
 });
@@ -63,4 +63,22 @@ tlGeneralInfo
   .from(".card-2", { yPercent: 100, opacity: 0, duration: 0.5 })
   .from(".card-3", { xPercent: 100, opacity: 0, duration: 0.5 })
   .from(".card-4", { yPercent: -100, opacity: 0, duration: 0.5 })
-  .from(".card-5", { xPercent: -100, opacity: 0, duration: 0.5 })
+  .from(".card-5", { xPercent: -100, opacity: 0, duration: 0.5 });
+
+///////////////////////
+import L from "leaflet";
+import 'leaflet/dist/leaflet.css'
+
+
+let map = L.map("#map").setView([46.822, 8.224], 8);
+
+/* 
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  minZoom: 0,
+  maxZoom: 10,
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map); */
+
+
+

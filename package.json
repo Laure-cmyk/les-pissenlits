@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "gsap": "^3.12.7",
+    "leaflet": "^1.9.4",
     "normalize.css": "^8.0.1",
     "scrollmagic": "^2.0.8"
   }
