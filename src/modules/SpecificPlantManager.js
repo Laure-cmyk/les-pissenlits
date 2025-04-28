@@ -22,6 +22,25 @@ export async function displaySpecificPlants(plants) {
   specificPlant.setAttribute("latin", plants[0].Nom_scientifique);
   specificPlant.setAttribute("description", plants[0].Habitus);
 
+  const modal = document.querySelector(".modal");
+
+  specificPlant.addEventListener("menaceClick", () => {
+    console.log("Menaces clicked");
+    modal.classList.toggle("active");
+  });
+
+  const closeModal = document.querySelector(".close");
+  closeModal.addEventListener("click", () => {
+    modal.classList.toggle("active");
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.toggle("active");
+    }
+  };
+
   specificPlantSection.append(specificPlant);
 
   plants.forEach((plant) => {
@@ -49,8 +68,7 @@ export async function displaySpecificPlants(plants) {
     plantSelector.append(plantItem);
   });
 
-
- /* Gestion du scroll de la liste */
+  /* Gestion du scroll de la liste */
   const scrollContent = document.querySelector("#plants-list"); // Conteneur avec overflow-y
   const upButton = document.querySelector(".scroll-btn.up");
   const downButton = document.querySelector(".scroll-btn.down");
