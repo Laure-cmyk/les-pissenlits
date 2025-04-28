@@ -1,64 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Les néophytes du canton de Vaud</title>
-    <link rel="stylesheet" href="styles/index.css" />
-    <script src="index.js" type="module" defer></script>
-  </head>
-  <body>
-    <main>
-      <section id="introduction">
-          <p>
-            Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
-            respectent aucune règle et s'accaparent tout l'espace !
-          </p>
-          <p>
-            Dans un écosystème équilibré, chaque plante a son rôle : certaines
-            nourrissent les pollinisateurs, d'autres protègent les sols ou
-            servent d'abri à la faune.
-          </p>
-          <p>
-            Mais les plantes invasives brisent cet équilibre en prenant le
-            contrôle. Elles viennent souvent de pays lointains et, une fois
-            introduites (par accident ou volontairement), elles se propagent
-            sans limite, menaçant les espèces indigènes.
-          </p>
-      </section>
 
-      <section id="general-info">
-        <div class="card card-1">
-          <p>Seulement</p>
-          <p><em>47%</em></p>
-          <p>
-            de la population suisse, a conscience que l'écosystème est menacé
-          </p>
-        </div>
-        <div class="card card-2">
-          <p>En Suisse, il y a environ</p>
-          <p><em>4000</em></p>
-          <p>espèces végétales sauvages</p>
-        </div>
-        <div class="card card-3">
-          <p><em>88</em></p>
-          <p>
-            Sont identifiées comme envahissantes ou potentionnellement
-            envahissantes
-          </p>
-        </div>
-        <div class="card card-4">
-          <p><em>750</em></p>
-          <p>Sont des néophytes (espèces introduites après 1500)</p>
-        </div>
-        <div class="card card-5">
-          <p>ce qui représente environ</p>
-          <p><em>2.2%</em></p>
-          <p>de la flore totale du pays</p>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les néophytes du canton de Vaud</title>
+  <link rel="stylesheet" href="styles/index.css" />
+  <script src="index.js" type="module" defer></script>
+  <script src="garden-chart.js" type="module" defer></script>
+  
+</head>
 
-      <section id="map"></section>
-    </main>
-  </body>
+<body>
+  <main>
+    <section id="introduction">
+      <p>
+        Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
+        respectent aucune règle et s'accaparent tout l'espace !
+      </p>
+      <p>
+        Dans un écosystème équilibré, chaque plante a son rôle : certaines
+        nourrissent les pollinisateurs, d'autres protègent les sols ou
+        servent d'abri à la faune.
+      </p>
+      <p>
+        Mais les plantes invasives brisent cet équilibre en prenant le
+        contrôle. Elles viennent souvent de pays lointains et, une fois
+        introduites (par accident ou volontairement), elles se propagent
+        sans limite, menaçant les espèces indigènes.
+      </p>
+    </section>
+
+    <section id="general-info">
+      <div class="card card-1">
+        <p>Seulement</p>
+        <p><em>47%</em></p>
+        <p>
+          de la population suisse, a conscience que l'écosystème est menacé
+        </p>
+      </div>
+      <div class="card card-2">
+        <p>En Suisse, il y a environ</p>
+        <p><em>4000</em></p>
+        <p>espèces végétales sauvages</p>
+      </div>
+      <div class="card card-3">
+        <p><em>88</em></p>
+        <p>
+          Sont identifiées comme envahissantes ou potentionnellement
+          envahissantes
+        </p>
+      </div>
+      <div class="card card-4">
+        <p><em>750</em></p>
+        <p>Sont des néophytes (espèces introduites après 1500)</p>
+      </div>
+      <div class="card card-5">
+        <p>ce qui représente environ</p>
+        <p><em>2.2%</em></p>
+        <p>de la flore totale du pays</p>
+      </div>
+    </section>
+
+    <section id="map"></section>
+
+    <section id="chart">
+
+    </section><!-- 🌱 ton jardin apparaîtra ici -->
+  </main>
+</body>
+
 </html>
