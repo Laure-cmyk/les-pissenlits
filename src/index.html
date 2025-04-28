@@ -11,21 +11,21 @@
   <body>
     <main>
       <section id="introduction">
-          <p>
-            Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
-            respectent aucune règle et s'accaparent tout l'espace !
-          </p>
-          <p>
-            Dans un écosystème équilibré, chaque plante a son rôle : certaines
-            nourrissent les pollinisateurs, d'autres protègent les sols ou
-            servent d'abri à la faune.
-          </p>
-          <p>
-            Mais les plantes invasives brisent cet équilibre en prenant le
-            contrôle. Elles viennent souvent de pays lointains et, une fois
-            introduites (par accident ou volontairement), elles se propagent
-            sans limite, menaçant les espèces indigènes.
-          </p>
+        <p>
+          Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
+          respectent aucune règle et s'accaparent tout l'espace !
+        </p>
+        <p>
+          Dans un écosystème équilibré, chaque plante a son rôle : certaines
+          nourrissent les pollinisateurs, d'autres protègent les sols ou servent
+          d'abri à la faune.
+        </p>
+        <p>
+          Mais les plantes invasives brisent cet équilibre en prenant le
+          contrôle. Elles viennent souvent de pays lointains et, une fois
+          introduites (par accident ou volontairement), elles se propagent sans
+          limite, menaçant les espèces indigènes.
+        </p>
       </section>
 
       <section id="general-info">
@@ -64,12 +64,43 @@
       <section id="specific-plant">
         <div id="plants-selector">
           <button class="scroll-btn up">▲</button>
-          <ul id="plants-list">
-
-          </ul>
+          <ul id="plants-list"></ul>
           <button class="scroll-btn down">▼</button>
         </div>
-        
+
+        <div id="menace-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-plant">
+              <div class="modal-plant-img">
+                <img
+                  src="./public/images/plant_placeholder.svg"
+                  alt="Image de la plante"
+                  class="modal-plant-img"
+                />
+              </div>
+              <div class="modal-plant-info">
+                <p class="modal-plant-name">Saucisse</p>
+                <p class="modal-plant-latin">Saucissus Maximus</p>
+                <p class="modal-plant-menace">
+                  Saucissum dolor amet, merguez tempor incididunt boudin aliqua.
+                  Chorizo elit, sed do eiusmod bratwurst ut labore et dolore
+                  magna aliqua. Ut enim ad minim saucisson, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex salami
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse kielbasa dolore eu fugiat nulla pariatur. Excepteur
+                  sint cillum dolore charcuterie. Non proident, culpa qui
+                  officia bresaola mollit anim id est laborum. Lorem saucisse
+                  ipsum dolor sit amet, andouille consectetur knackwurst
+                  adipiscing elit. Fusce mortadella ligula, accumsan non
+                  chipolata ac, dictum nec jambon. Integer viverra knackis
+                  lacus, at rhoncus saucisson sec vel condimentum.
+                </p>
+                <button class="modal-btn">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>

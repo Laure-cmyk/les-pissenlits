@@ -121,3 +121,107 @@ specific-plant #plant-svg svg {
   width: 200px;
   height: 200px;
 }
+
+
+
+/* The Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal.active {
+  display: block; /* Show the modal */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 100px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  border: 1px solid #000000;
+  width: 50%; /* Could be more or less, depending on screen size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-plant{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.modal-plant div{
+  width: 50%;
+}
+
+.modal-plant img{
+  width: 80%;
+}
+
+.modal-plant-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.modal-plant-name{
+  padding: 0 0;
+  margin: 0 0 ;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.modal-plant-latin{
+  padding: 0 0;
+  margin: 0 0 ;
+  font-style: italic;
+  color:#888;
+}
+
+.modal-plant-menace{
+  margin: 10px 0 10px 0;
+}
+
+.modal-btn{
+  align-self: center;
+  padding: 10px 40px;
+  border-style: none;
+  border-radius: 30px;
+  background-color: #79F0F0;
+}
+
+.modal-btn:hover{
+  background-color: #4DD0E1;
+  cursor: pointer;
+}
