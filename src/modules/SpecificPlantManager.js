@@ -7,6 +7,7 @@ export async function displaySpecificPlants(plants) {
   const plantSelector = specificPlantSection.querySelector("#plants-list");
 
   const specificPlant = document.createElement(`specific-plant`);
+  const menaceModal = document.createElement(`menace-modal`);
 
   let svg;
 
@@ -22,7 +23,14 @@ export async function displaySpecificPlants(plants) {
   specificPlant.setAttribute("latin", plants[0].Nom_scientifique);
   specificPlant.setAttribute("description", plants[0].Habitus);
 
+  specificPlant.addEventListener("menaceClick", () => {
+    console.log("open modal");
+    menaceModal.setAttribute("active", true);
+  });
+
+
   specificPlantSection.append(specificPlant);
+  specificPlantSection.append(menaceModal);
 
   plants.forEach((plant) => {
     const plantItem = document.createElement("li");
@@ -49,8 +57,7 @@ export async function displaySpecificPlants(plants) {
     plantSelector.append(plantItem);
   });
 
-
- /* Gestion du scroll de la liste */
+  /* Gestion du scroll de la liste */
   const scrollContent = document.querySelector("#plants-list"); // Conteneur avec overflow-y
   const upButton = document.querySelector(".scroll-btn.up");
   const downButton = document.querySelector(".scroll-btn.down");

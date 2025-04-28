@@ -1,3 +1,7 @@
+const menaceClick = new CustomEvent("menaceClick");
+const provenanceClick = new CustomEvent("provenanceClick");
+const carteClick = new CustomEvent("carteClick");
+
 class SpecificPlant extends HTMLElement {
   static observedAttributes = ["name", "latin", "description"];
 
@@ -23,10 +27,14 @@ class SpecificPlant extends HTMLElement {
             <div id="plant-buttons">
                 <button>Provenance</button>
                 <button>Cartes</button>
-                <button>Menaces</button>
+                <button class="menaces-btn">Menaces</button>
             </div>
         </div>
         `;
+        this.querySelector('.menaces-btn').addEventListener('click', (e) => {
+          e.preventDefault()
+          this.dispatchEvent(menaceClick)
+        })
   }
 }
 
