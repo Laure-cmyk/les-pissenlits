@@ -7,6 +7,7 @@ export async function displaySpecificPlants(plants) {
   const plantSelector = specificPlantSection.querySelector("#plants-list");
 
   const specificPlant = document.createElement(`specific-plant`);
+  const menaceModal = document.createElement(`menace-modal`);
 
   let svg;
 
@@ -22,26 +23,21 @@ export async function displaySpecificPlants(plants) {
   specificPlant.setAttribute("latin", plants[0].Nom_scientifique);
   specificPlant.setAttribute("description", plants[0].Habitus);
 
-  const modal = document.querySelector(".modal");
-
   specificPlant.addEventListener("menaceClick", () => {
-    console.log("Menaces clicked");
-    modal.classList.toggle("active");
-  });
-
-  const closeModal = document.querySelector(".close");
-  closeModal.addEventListener("click", () => {
-    modal.classList.toggle("active");
+    console.log("open modal");
+    menaceModal.setAttribute("active", true);
   });
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target != modal) {
+      console.log("close modal");
       modal.classList.toggle("active");
     }
   };
 
   specificPlantSection.append(specificPlant);
+  specificPlantSection.append(menaceModal);
 
   plants.forEach((plant) => {
     const plantItem = document.createElement("li");
