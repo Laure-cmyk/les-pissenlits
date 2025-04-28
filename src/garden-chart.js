@@ -9,19 +9,20 @@ const height = window.innerHeight;
 data.sort((a, b) => (b.Taille_max ?? 0) - (a.Taille_max ?? 0));
 
 // --- Créer le SVG principal ---
-const svg = d3.select("#chart")
+const svg = d3
+  .select("#chart")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
   .style("background", "#eaffea");
 
-// --- Groupe conteneur pour toutes les plantes ---
+// --- Groupe conteneur ---
 const container = svg.append("g");
 
 // --- Variables de contrôle ---
 let currentActivePlants = 1;
 let lastScrollTime = 0;
-const scrollCooldown = 300; // 300ms entre chaque action
+const scrollCooldown = 300; // 300ms entre deux scrolls
 
 // --- Afficher le compteur de néophytes ---
 d3.select("body")
@@ -31,24 +32,27 @@ d3.select("body")
 
 // --- Fonction pour mettre à jour l'affichage du jardin ---
 function updateGarden() {
-  container.selectAll("g.plant")
-    .data(data.slice(0, currentActivePlants), d => d.taxon_id)
+  container
+    .selectAll("g.plant")
+    .data(data.slice(0, currentActivePlants), (d) => d.taxon_id)
     .join(
-      enter => {
-        const g = enter.append("g")
+      // --- Nouvelle plante ---
+      (enter) => {
+        const g = enter
+          .append("g")
           .attr("class", "plant")
           .attr("transform", (d, i) => getPlantPosition(i));
 
         g.append("circle")
           .attr("r", 0)
-          .attr("fill", d => getColor(d.Habitus))
+          .attr("fill", (d) => getColor(d.Habitus))
           .attr("opacity", 0.8)
           .transition()
           .duration(1000)
-          .attr("r", d => Math.sqrt(d.Taille_max ?? 100));
+          .attr("r", (d) => Math.sqrt(d.Taille_max ?? 100));
 
         g.append("text")
-          .text(d => d.Name.Nom_FR)
+          .text((d) => d.Name.Nom_FR)
           .attr("text-anchor", "middle")
           .attr("dy", "-1.5em")
           .style("font-size", "12px")
@@ -60,21 +64,25 @@ function updateGarden() {
 
         return g;
       },
-      update => update.transition()
-        .duration(500)
-        .attr("transform", (d, i) => getPlantPosition(i)),
-      exit => exit.transition()
-        .duration(500)
-        .attr("opacity", 0)
-        .remove()
+      // --- Mise à jour des positions ---
+      (update) =>
+        update
+          .transition()
+          .duration(500)
+          .attr("transform", (d, i) => getPlantPosition(i)),
+      // --- Suppression ---
+      (exit) => exit.transition().duration(500).attr("opacity", 0).remove()
     );
 }
 
-// --- Calculer la position des plantes ---
+// --- Fonction pour calculer la position ---
+// La dernière plante ajoutée est tout à gauche (x=50)
+// Les suivantes se décalent vers la droite ➡️
 function getPlantPosition(i) {
-  const spacing = 100;
-  const x = 50 + i * spacing;
-  const y = height - 50;
+  const spacing = 100; // Espace fixe entre chaque plante
+  const total = currentActivePlants;
+  const x = 50 + (total - i - 1) * spacing; // inversé pour pousser à droite
+  const y = height - 50; // Aligné en bas
   return `translate(${x}, ${y})`;
 }
 
@@ -85,60 +93,72 @@ function isInChartSection() {
   return rect.top <= window.innerHeight && rect.bottom >= 0;
 }
 
-// --- Gérer uniquement le SCROLL HORIZONTAL pour ajouter/enlever des plantes ---
-window.addEventListener("wheel", (event) => {
-  const now = Date.now();
-  if (now - lastScrollTime < scrollCooldown) return;
-  lastScrollTime = now;
+// --- Gestion du scroll ---
+window.addEventListener(
+  "wheel",
+  (event) => {
+    const now = Date.now();
+    if (now - lastScrollTime < scrollCooldown) return;
+    lastScrollTime = now;
 
-  if (isInChartSection()) {
-    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-      // Seulement si scroll horizontal dominant
-      event.preventDefault(); // Empêcher le scroll horizontal natif
+    if (isInChartSection()) {
+      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+        // ➡️ Uniquement si scroll horizontal
+        event.preventDefault();
 
-      const totalPlants = data.length;
+        const totalPlants = data.length;
 
-      if (event.deltaX > 0) {
-        // ➡️ Vers la droite ➔ Ajouter plante
-        if (currentActivePlants < totalPlants) {
-          currentActivePlants++;
-          updateGarden();
-        }
-      } else if (event.deltaX < 0) {
-        // ⬅️ Vers la gauche ➔ Retirer plante
-        if (currentActivePlants > 1) {
-          currentActivePlants--;
-          updateGarden();
+        if (event.deltaX > 0) {
+          // ➡️ Scroll vers la droite ➔ Ajouter une plante
+          if (currentActivePlants < totalPlants) {
+            currentActivePlants++;
+            updateGarden();
+          }
+        } else if (event.deltaX < 0) {
+          // ⬅️ Scroll vers la gauche ➔ Retirer une plante
+          if (currentActivePlants > 1) {
+            currentActivePlants--;
+            updateGarden();
+          }
         }
       }
     }
-  }
-}, { passive: false }); // Nécessaire pour pouvoir utiliser preventDefault()
+  },
+  { passive: false }
+); // Autoriser preventDefault()
 
-// --- Flottement doux ---
+// --- Animation flottement doux des plantes ---
 d3.timer((elapsed) => {
-  container.selectAll("g.plant")
-    .attr("transform", (d, i) => {
-      const spacing = 100;
-      const x = 50 + i * spacing;
-      const y = height - 50 + Math.sin((elapsed / 1000) + i) * 5;
-      return `translate(${x}, ${y})`;
-    });
+  container.selectAll("g.plant").attr("transform", (d, i) => {
+    const spacing = 100;
+    const total = currentActivePlants;
+    const x = 50 + (total - i - 1) * spacing; // inversé pour animer aussi
+    const y = height - 50 + Math.sin(elapsed / 1000 + i) * 5;
+    return `translate(${x}, ${y})`;
+  });
 });
 
-// --- Fonction couleur selon Habitus ---
+// --- Couleur selon type de plante ---
 function getColor(habitus) {
   switch (habitus) {
-    case "Arbre": return "darkgreen";
-    case "Buisson": return "purple";
-    case "Herbacée": return "limegreen";
-    case "Plante aquatique": return "teal";
-    case "Liane": return "orange";
-    case "Graminéen": return "gold";
-    case "Succulent": return "lightpink";
-    default: return "gray";
+    case "Arbre":
+      return "darkgreen";
+    case "Buisson":
+      return "purple";
+    case "Herbacée":
+      return "limegreen";
+    case "Plante aquatique":
+      return "teal";
+    case "Liane":
+      return "orange";
+    case "Graminéen":
+      return "gold";
+    case "Succulent":
+      return "lightpink";
+    default:
+      return "gray";
   }
 }
 
-// --- Initialiser ---
+// --- Lancer une première fois ---
 updateGarden();
