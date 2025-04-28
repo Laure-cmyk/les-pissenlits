@@ -28,13 +28,6 @@ export async function displaySpecificPlants(plants) {
     menaceModal.setAttribute("active", true);
   });
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target != modal) {
-      console.log("close modal");
-      modal.classList.toggle("active");
-    }
-  };
 
   specificPlantSection.append(specificPlant);
   specificPlantSection.append(menaceModal);
