@@ -1,62 +1,227 @@
-@import 'normalize.css';
+@import "normalize.css";
 
-
-body{
-    overflow-x: hidden;
-    height: 100vh;
-    --background-color: #EDDDC8;
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  --background-color: #edddc8;
 }
 
-main{
-    height: 100%;
-    margin: 0;
+main {
+  height: 100%;
+  margin: 0;
 }
 
-section{
-    width: 100%;
-    height: 100%;
-    margin:0;
-    background-color: var(--background-color);
+section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--background-color);
 }
 
-#introduction{
-    text-align: center;
-    font-size:2em;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+#introduction {
+  text-align: center;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #general-info {
-    width: 100%;
-    position: relative; /* Change to fixed for pinning */
-    top: 0; /* Ensure it stays at the top of the viewport */
-    left: 0;
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Ensure proper layout for child elements */
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  position: relative; /* Change to fixed for pinning */
+  top: 0; /* Ensure it stays at the top of the viewport */
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Ensure proper layout for child elements */
+  justify-content: center;
+  align-items: center;
 }
 
 #general-info .card {
-    position: absolute; /* Ensure cards can move independently */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%; /* Adjust width for better layout */
-    height: 80%; /* Adjust height for better layout */
-    background-color: var(--background-color);
+  position: absolute; /* Ensure cards can move independently */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Adjust width for better layout */
+  height: 80%; /* Adjust height for better layout */
+  background-color: var(--background-color);
 }
 
-em{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.5em;
+em {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-#map{
-    background-color: red;
+#map {
+  background-color: red;
+}
+
+#specific-plant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#plants-list {
+  list-style-type: none;
+  overflow-y: auto; /* Active le scroll vertical */
+  max-height: 150px; /* Limite la hauteur */
+  padding: 10px;
+}
+
+/* Cache la barre de défilement verticale*/
+#plants-list::-webkit-scrollbar{
+    display: none;
+}
+
+.plant-item{
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #e3f2fd;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.plant-item.active {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Style des boutons de défilement */
+.scroll-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #bbdefb;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+
+specific-plant {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+specific-plant #plant-svg {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+specific-plant #plant-svg svg {
+  width: 200px;
+  height: 200px;
+}
+
+
+
+/* The Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal.active {
+  display: block; /* Show the modal */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 100px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  border: 1px solid #000000;
+  width: 50%; /* Could be more or less, depending on screen size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-plant{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.modal-plant div{
+  width: 50%;
+}
+
+.modal-plant img{
+  width: 80%;
+}
+
+.modal-plant-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.modal-plant-name{
+  padding: 0 0;
+  margin: 0 0 ;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.modal-plant-latin{
+  padding: 0 0;
+  margin: 0 0 ;
+  font-style: italic;
+  color:#888;
+}
+
+.modal-plant-menace{
+  margin: 10px 0 10px 0;
+}
+
+.modal-btn{
+  align-self: center;
+  padding: 10px 40px;
+  border-style: none;
+  border-radius: 30px;
+  background-color: #79F0F0;
+}
+
+.modal-btn:hover{
+  background-color: #4DD0E1;
+  cursor: pointer;
 }
