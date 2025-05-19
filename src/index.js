@@ -66,19 +66,16 @@ tlGeneralInfo
   .from(".card-5", { xPercent: -100, opacity: 0, duration: 0.5 });
 
 ///////////////////////
+
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css'
 import worldMap from 'geojson-world-map';
+import neophytesData from '../datas/selected_neophytes.json';
+import fleurIcon from './assets/fleur2.png';
 
-let map = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([46.822, 8.224], 8);
+/* Code pour la map Suisse */
 
-// Add the base tile layer
-/* L.tileLayer(`https://tile.openstreetmap.org/{z}/{x}/{y}.png`, {
-  minZoom: 8,
-  maxZoom: 8,
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map); */
+/* let map = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([46.822, 8.224], 8);
 
 const switzerlandGeoJSON = worldMap.features.find(feature => feature.properties.name === 'Switzerland');
 
@@ -98,7 +95,52 @@ L.geoJSON(switzerlandGeoJSON, {
         fillOpacity: 1
     }
 }).addTo(map);
+ */
 
+/* Code pour la worldmap */
+let worldmap = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([20, 0], 2);
+
+const countryCoordinates = {
+    "Chine": { lat: 35.8617, lng: 104.1954 },
+    "Japon": { lat: 36.2048, lng: 138.2529 },
+    "Canada": { lat: 56.1304, lng: -106.3468 },
+    // Ajouter d'autres pays selon vos besoins
+};
+
+// Add all countries
+L.geoJSON(worldMap, {
+    style: {
+        color: 'black',
+        weight: 1,
+        fillColor: 'white',
+        fillOpacity: 1
+    }
+}).addTo(worldmap);
+
+const customIcon = L.icon({
+  iconUrl: fleurIcon,
+  iconSize: [32, 42],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32]
+});
+
+neophytesData.forEach(plant => {
+    if (plant.Origine && countryCoordinates[plant.Origine]) {
+        const coordinates = countryCoordinates[plant.Origine];
+        const marker = L.marker([coordinates.lat, coordinates.lng], {
+          icon: customIcon
+        });
+        
+        // Add popup with plant information
+        marker.bindPopup(`
+            <strong>${plant.Name.Nom_FR}</strong><br>
+            Nom scientifique: ${plant.Nom_scientifique}<br>
+            Origine: ${plant.Origine}
+        `);
+        
+        marker.addTo(worldmap);
+    }
+});
 
 
 
