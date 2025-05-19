@@ -8,14 +8,16 @@ export async function displaySpecificPlants(plants) {
 
   const specificPlant = document.createElement(`specific-plant`);
   const menaceModal = document.createElement(`menace-modal`);
+  const provenanceMap = document.querySelector("#map");
+  console.log(provenanceMap);
 
   let svg;
 
   try {
-    svg = await loadSvg("plant_placeholder.svg");
+    svg = await loadSvg("/images/plant_placeholder.svg");
   } catch (e) {
     console.error(`Failed to load SVG`, e);
-    svg = await loadSvg("plant_placeholder.svg");
+    svg = await loadSvg("/images/plant_placeholder.svg");
   }
 
   specificPlant.setAttribute("svg", svg);
@@ -27,6 +29,11 @@ export async function displaySpecificPlants(plants) {
     console.log("open modal");
     menaceModal.setAttribute("active", true);
   });
+
+  specificPlant.addEventListener("provenanceClick", () => {
+    console.log("open provenance");
+    provenanceMap.classList.toggle("active");
+  })
 
 
   specificPlantSection.append(specificPlant);

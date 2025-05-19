@@ -4,26 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les néophytes du canton de Vaud</title>
-    <link rel="stylesheet" href="src/styles/index.css" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <script src="./src/index.js" type="module" defer></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script src="./src/customElements/SpecificPlant.js" type="module" defer></script>
+    <script src="./src/customElements/MenaceModal.js" type="module" defer></script>
   </head>
   <body>
     <main>
       <section id="introduction">
-          <p>
-            Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
-            respectent aucune règle et s'accaparent tout l'espace !
-          </p>
-          <p>
-            Dans un écosystème équilibré, chaque plante a son rôle : certaines
-            nourrissent les pollinisateurs, d'autres protègent les sols ou
-            servent d'abri à la faune.
-          </p>
-          <p>
-            Mais les plantes invasives brisent cet équilibre en prenant le
-            contrôle. Elles viennent souvent de pays lointains et, une fois
-            introduites (par accident ou volontairement), elles se propagent
-            sans limite, menaçant les espèces indigènes.
-          </p>
+        <p>
+          Bienvenue dans l'univers des plantes invasives, ces espèces qui ne
+          respectent aucune règle et s'accaparent tout l'espace !
+        </p>
+        <p>
+          Dans un écosystème équilibré, chaque plante a son rôle : certaines
+          nourrissent les pollinisateurs, d'autres protègent les sols ou servent
+          d'abri à la faune.
+        </p>
+        <p>
+          Mais les plantes invasives brisent cet équilibre en prenant le
+          contrôle. Elles viennent souvent de pays lointains et, une fois
+          introduites (par accident ou volontairement), elles se propagent sans
+          limite, menaçant les espèces indigènes.
+        </p>
       </section>
 
       <section id="general-info">
@@ -57,8 +61,17 @@
         </div>
       </section>
 
-      <div id="map"></div>
+      
+
+      <section id="specific-plant">
+        <div id="plants-selector">
+          <button class="scroll-btn up">▲</button>
+          <ul id="plants-list"></ul>
+          <button class="scroll-btn down">▼</button>
+        </div>
+
+        <div id="map"></div>
+      </section>
     </main>
-    <script src="src/index.js" type="module" defer></script>
   </body>
 </html>

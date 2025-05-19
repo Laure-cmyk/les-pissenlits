@@ -25,7 +25,7 @@ class SpecificPlant extends HTMLElement {
             <p id="description">${this.getAttribute("description")}</p>
             </div>
             <div id="plant-buttons">
-                <button>Provenance</button>
+                <button class="provenance-btn">Provenance</button>
                 <button>Cartes</button>
                 <button class="menaces-btn">Menaces</button>
             </div>
@@ -34,6 +34,10 @@ class SpecificPlant extends HTMLElement {
         this.querySelector('.menaces-btn').addEventListener('click', (e) => {
           e.preventDefault()
           this.dispatchEvent(menaceClick)
+        })
+        this.querySelector('.provenance-btn').addEventListener('click', (e) => {
+          e.preventDefault()
+          this.dispatchEvent(provenanceClick)
         })
   }
 }
