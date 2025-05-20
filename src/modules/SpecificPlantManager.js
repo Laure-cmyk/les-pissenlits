@@ -32,9 +32,9 @@ export async function displaySpecificPlants(plants) {
 
   specificPlant.addEventListener("provenanceClick", () => {
     console.log("open provenance");
-    provenanceMap.classList.toggle("active");
-  })
-
+    document.dispatchEvent(new CustomEvent("openMapModal"));
+    //provenanceMap.classList.toggle("active");
+  });
 
   specificPlantSection.append(specificPlant);
   specificPlantSection.append(menaceModal);

@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
     <script src="./src/index.js" type="module" defer></script>
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
-    <script src="./src/customElements/SpecificPlant.js" type="module" defer></script>
-    <script src="./src/customElements/MenaceModal.js" type="module" defer></script>
+    <script
+      src="./src/customElements/SpecificPlant.js"
+      type="module"
+      defer
+    ></script>
+    <script
+      src="./src/customElements/MenaceModal.js"
+      type="module"
+      defer
+    ></script>
   </head>
   <body>
     <main>
@@ -61,8 +69,6 @@
         </div>
       </section>
 
-      
-
       <section id="specific-plant">
         <div id="plants-selector">
           <button class="scroll-btn up">▲</button>
@@ -70,7 +76,14 @@
           <button class="scroll-btn down">▼</button>
         </div>
 
-        <div id="map"></div>
+        <!-- Map Modal -->
+        <div id="map-modal" class="map-modal">
+          <div class="map-modal-content">
+            <span class="close" id="close-map-modal">&times;</span>
+            <div id="map"></div>
+          </div>
+        </div>
+        
       </section>
     </main>
   </body>
