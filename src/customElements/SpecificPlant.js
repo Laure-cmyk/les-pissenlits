@@ -19,10 +19,10 @@ class SpecificPlant extends HTMLElement {
             ${this.getAttribute("svg")}
         </div>
         <div id="plant-info">
-            <div id="plant-name_descr>
-            <p id="plant-name">${this.getAttribute("name")}</p>
-            <p id="plant-name-lat">${this.getAttribute("latin")}</p>
-            <p id="description">${this.getAttribute("description")}</p>
+            <div id="plant-name-descr">
+              <p id="plant-name">${this.getAttribute("name")}</p>
+              <p id="plant-name-lat">${this.getAttribute("latin")}</p>
+              <p id="description">${this.getAttribute("description")}</p>
             </div>
             <div id="plant-buttons">
                 <button class="provenance-btn">Provenance</button>
@@ -31,14 +31,14 @@ class SpecificPlant extends HTMLElement {
             </div>
         </div>
         `;
-        this.querySelector('.menaces-btn').addEventListener('click', (e) => {
-          e.preventDefault()
-          this.dispatchEvent(menaceClick)
-        })
-        this.querySelector('.provenance-btn').addEventListener('click', (e) => {
-          e.preventDefault()
-          this.dispatchEvent(provenanceClick)
-        })
+    this.querySelector(".menaces-btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      this.dispatchEvent(menaceClick);
+    });
+    this.querySelector(".provenance-btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      this.dispatchEvent(provenanceClick);
+    });
   }
 }
 

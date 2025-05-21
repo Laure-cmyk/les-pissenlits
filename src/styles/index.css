@@ -1,6 +1,11 @@
 @import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 
 body {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
   height: 100vh;
   --background-color: #edddc8;
@@ -19,8 +24,10 @@ section {
 }
 
 #introduction {
+  padding:50px;
   text-align: center;
   font-size: 2em;
+  letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,15 +59,17 @@ section {
 em {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #1C6B33;
 }
 
 
 #specific-plant {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #plants-list {
@@ -79,21 +88,21 @@ em {
   padding: 10px;
   margin: 5px 0;
   cursor: pointer;
-  background-color: #e3f2fd;
   text-align: center;
-  transition: background-color 0.3s ease;
+  /*transition: background-color 0.3s ease;*/
 }
 
 .plant-item.active {
   font-size: 1.1rem;
   font-weight: bold;
+  background-color: #e3f2fd;
 }
 
 /* Style des boutons de défilement */
 .scroll-btn {
   width: 100%;
   padding: 10px;
-  background-color: #bbdefb;
+  background-color: #00000000;
   border: none;
   cursor: pointer;
   font-size: 18px;
@@ -103,7 +112,7 @@ em {
 specific-plant {
   width: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -112,12 +121,42 @@ specific-plant #plant-svg {
   height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 specific-plant #plant-svg svg {
   width: 200px;
   height: 200px;
 }
+
+
+specific-plant #plant-name-lat{
+  color: rgba(0, 0, 0, 0.53);
+}
+
+#plant-name-descr{
+  padding:0 0 0 20px;
+  border-left: 1px solid #000;
+}
+
+specific-plant #plant-buttons{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:10px;
+}
+
+specific-plant button{
+  padding: 10px 20px;
+  background-color: #79f0f0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+
 
 /* The Modal */
 .modal {
@@ -292,4 +331,37 @@ specific-plant #plant-svg svg {
   font-weight: bold;
   z-index: 10;
   cursor: pointer;
+}
+
+
+
+
+/* S'INFORMER */
+
+#information{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#information h1{
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+
+#information p{
+  font-size:3em;
+}
+
+#information a {
+  display: flex;
+  justify-content: center;
+}
+
+#information img{
+  width: 80%;
+  max-width: 600px;
+  height: auto;
 }
