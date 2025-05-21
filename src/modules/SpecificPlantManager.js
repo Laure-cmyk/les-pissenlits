@@ -4,9 +4,9 @@ export async function displaySpecificPlants(plants) {
   console.log(plants);
 
   const specificPlantSection = document.querySelector("#specific-plant");
-  const plantSelector = specificPlantSection.querySelector("#plants-list");
 
   const specificPlant = document.createElement(`specific-plant`);
+  
   const menaceModal = document.createElement(`menace-modal`);
   const provenanceMap = document.querySelector("#map");
   console.log(provenanceMap);
@@ -24,6 +24,7 @@ export async function displaySpecificPlants(plants) {
   specificPlant.setAttribute("name", plants[0].Name.Nom_FR);
   specificPlant.setAttribute("latin", plants[0].Nom_scientifique);
   specificPlant.setAttribute("description", plants[0].Habitus);
+  specificPlant.setAttribute("plants", JSON.stringify(plants));
 
   specificPlant.addEventListener("menaceClick", () => {
     console.log("open modal");
@@ -37,7 +38,11 @@ export async function displaySpecificPlants(plants) {
   });
 
   specificPlantSection.append(specificPlant);
+  
   specificPlantSection.append(menaceModal);
+
+  /*
+  const plantSelector = specificPlantSection.querySelector("#plants-list");
 
   plants.forEach((plant) => {
     const plantItem = document.createElement("li");
@@ -63,26 +68,27 @@ export async function displaySpecificPlants(plants) {
 
     plantSelector.append(plantItem);
   });
+  */
 
-  /* Gestion du scroll de la liste */
-  const scrollContent = document.querySelector("#plants-list"); // Conteneur avec overflow-y
-  const upButton = document.querySelector(".scroll-btn.up");
-  const downButton = document.querySelector(".scroll-btn.down");
-  const scrollStep = 50; // Nombre de pixels à défiler par clic
+  // /* Gestion du scroll de la liste */
+  // const scrollContent = document.querySelector("#plants-list"); // Conteneur avec overflow-y
+  // const upButton = document.querySelector(".scroll-btn.up");
+  // const downButton = document.querySelector(".scroll-btn.down");
+  // const scrollStep = 50; // Nombre de pixels à défiler par clic
 
-  // Défilement vers le haut
-  upButton.addEventListener("click", () => {
-    scrollContent.scrollBy({
-      top: -scrollStep, // Défile vers le haut
-      behavior: "smooth", // Défilement fluide
-    });
-  });
+  // // Défilement vers le haut
+  // upButton.addEventListener("click", () => {
+  //   scrollContent.scrollBy({
+  //     top: -scrollStep, // Défile vers le haut
+  //     behavior: "smooth", // Défilement fluide
+  //   });
+  // });
 
-  // Défilement vers le bas
-  downButton.addEventListener("click", () => {
-    scrollContent.scrollBy({
-      top: scrollStep, // Défile vers le bas
-      behavior: "smooth", // Défilement fluide
-    });
-  });
+  // // Défilement vers le bas
+  // downButton.addEventListener("click", () => {
+  //   scrollContent.scrollBy({
+  //     top: scrollStep, // Défile vers le bas
+  //     behavior: "smooth", // Défilement fluide
+  //   });
+  // });
 }
