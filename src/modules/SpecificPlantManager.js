@@ -6,10 +6,9 @@ export async function displaySpecificPlants(plants) {
   const specificPlantSection = document.querySelector("#specific-plant");
 
   const specificPlant = document.createElement(`specific-plant`);
-  
+
   const menaceModal = document.createElement(`menace-modal`);
   const provenanceMap = document.querySelector("#map");
-  console.log(provenanceMap);
 
   let svg;
 
@@ -23,12 +22,22 @@ export async function displaySpecificPlants(plants) {
   specificPlant.setAttribute("svg", svg);
   specificPlant.setAttribute("name", plants[0].Name.Nom_FR);
   specificPlant.setAttribute("latin", plants[0].Nom_scientifique);
-  specificPlant.setAttribute("description", plants[0].Habitus);
+  specificPlant.setAttribute("habitus", plants[0].Habitus);
+  specificPlant.setAttribute("description", plants[0].Description);
   specificPlant.setAttribute("plants", JSON.stringify(plants));
 
   specificPlant.addEventListener("menaceClick", () => {
     console.log("open modal");
     menaceModal.setAttribute("active", true);
+    menaceModal.setAttribute("name", specificPlant.getAttribute("name"));
+    menaceModal.setAttribute("latin", specificPlant.getAttribute("latin"));
+    menaceModal.setAttribute(
+      "description",
+      specificPlant.getAttribute("description")
+    );
+
+    const tempSvg = document.querySelector("#plant-svg svg");
+    menaceModal.setAttribute("svg", tempSvg ? tempSvg.outerHTML : "");
   });
 
   specificPlant.addEventListener("provenanceClick", () => {
@@ -38,7 +47,7 @@ export async function displaySpecificPlants(plants) {
   });
 
   specificPlantSection.append(specificPlant);
-  
+
   specificPlantSection.append(menaceModal);
 
   /*

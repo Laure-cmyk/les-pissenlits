@@ -227,6 +227,11 @@ specific-plant button{
   width: 80%;
 }
 
+.modal-plant svg{
+  width: 100px;
+  height: auto;
+}
+
 .modal-plant-info {
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ import { loadSvg } from "@/lib/fetcher.js";
 let placeHolder = await loadSvg("/images/plant_placeholder.svg");
 
 class SpecificPlant extends HTMLElement {
-  static observedAttributes = ["name", "latin", "description", "plants","svg"];
+  static observedAttributes = ["name", "latin", "description", "plants","svg","habitus"];
 
   plants = [];
 
@@ -40,7 +40,8 @@ class SpecificPlant extends HTMLElement {
     this.plants.forEach((plant) => {
       const plantItem = document.createElement("li");
       plantItem.classList.add("plant-item");
-      plantItem.dataset.description = plant.Habitus;
+      plantItem.dataset.description = plant.Description;
+      plantItem.dataset.habitus = plant.Habitus;
       plantItem.dataset.name = plant.Name.Nom_FR;
       plantItem.dataset.nameLatin = plant.Nom_scientifique;
       plantItem.dataset.svg = plant.img || "";
@@ -54,6 +55,7 @@ class SpecificPlant extends HTMLElement {
 
         this.setAttribute("name", plantItem.dataset.name);
         this.setAttribute("latin", plantItem.dataset.nameLatin);
+        this.setAttribute("habitus", plantItem.dataset.habitus);
         this.setAttribute("description", plantItem.dataset.description);
 
         let svg = null;
@@ -132,7 +134,7 @@ class SpecificPlant extends HTMLElement {
             <div id="plant-name-descr">
               <p id="plant-name">${this.getAttribute("name")}</p>
               <p id="plant-name-lat">${this.getAttribute("latin")}</p>
-              <p id="description">${this.getAttribute("description")}</p>
+              <p id="habitus">${this.getAttribute("habitus")}</p>
             </div>
             <div id="plant-buttons">
                 <button class="provenance-btn">Provenance</button>
