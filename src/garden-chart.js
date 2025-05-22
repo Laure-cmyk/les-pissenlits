@@ -179,7 +179,7 @@ function updateGarden() {
 
   const plants = container
     .selectAll("g.plant")
-    .data(positions, (d) => d.plant.id);
+    .data(positions, (d) => d.plant.taxon_id);
 
   const enter = plants
     .enter()
