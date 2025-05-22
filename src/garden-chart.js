@@ -1,164 +1,308 @@
-import * as d3 from "d3";
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import data from "../datas/selected_neophytes.json" assert { type: "json" };
 
-// --- Dimensions de l'écran ---
-const width = window.innerWidth;
-const height = window.innerHeight;
+// --- Configuration ---
+const config = {
+  plantSpacing: 400,
+  minSizeMeters: 0.2,
+  maxSizeMeters: 25,
+  animationDuration: 800,
+  growDelay: 400, // Temps avant qu'une nouvelle plante ne s'affiche (en ms)
+  groundHeight: 30,
+  maxVisiblePlants: 8, // Nombre maximum de plantes visibles à l'écran
+  autoGrowInterval: 2000, // Intervalle entre chaque nouvelle plante (en ms)
+};
 
-// --- Trier les plantes du plus grand au plus petit selon Taille_max ---
+let currentActivePlants = 0;
+let isChartVisible = false;
+let animatedPlants = new Set(); // Ensemble pour suivre les plantes déjà animées
+
+// --- Préparation des données ---
+data.forEach((d) => {
+  if (d.Taille_min != null) d.Taille_min /= 100;
+  if (d.Taille_max != null) d.Taille_max /= 100;
+});
 data.sort((a, b) => (b.Taille_max ?? 0) - (a.Taille_max ?? 0));
 
-// --- Créer le SVG principal ---
-const svg = d3
-  .select("#chart")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .style("background", "#eaffea");
+// --- Dimensions ---
+function getDimensions() {
+  return {
+    screenWidth: window.innerWidth,
+    screenHeight: window.innerHeight,
+  };
+}
+let { screenWidth, screenHeight } = getDimensions();
 
-// --- Groupe conteneur ---
+// --- Sélection du conteneur et création du SVG ---
+const chartContainer = d3
+  .select("#chart")
+  .style("width", "100%")
+  .style("height", "100vh")
+  .style("position", "relative")
+  .style("overflow-x", "auto")
+  .style("overflow-y", "hidden");
+
+const svg = chartContainer
+  .append("svg")
+  .attr("width", screenWidth)
+  .attr("height", screenHeight)
+  .style("display", "block");
+
+// --- Dégradé ciel ---
+const defs = svg.append("defs");
+const gradient = defs
+  .append("linearGradient")
+  .attr("id", "sky-gradient")
+  .attr("x1", "0%")
+  .attr("y1", "0%")
+  .attr("x2", "0%")
+  .attr("y2", "100%");
+gradient.append("stop").attr("offset", "0%").attr("stop-color", "#cceeff");
+gradient.append("stop").attr("offset", "100%").attr("stop-color", "#eaffea");
+
+svg
+  .append("rect")
+  .attr("width", "100%")
+  .attr("height", "100%")
+  .attr("fill", "url(#sky-gradient)")
+  .lower();
+
+// --- Bande d'herbe ---
+svg
+  .append("rect")
+  .attr("y", screenHeight - config.groundHeight)
+  .attr("width", "100%")
+  .attr("height", config.groundHeight)
+  .attr("fill", "green")
+  .attr("opacity", 0.6);
+
+// --- Groupe nuages ---
+const clouds = svg.append("g").attr("id", "clouds");
+for (let i = 0; i < 5; i++) {
+  clouds
+    .append("ellipse")
+    .attr("cx", Math.random() * screenWidth)
+    .attr("cy", Math.random() * (screenHeight * 0.3))
+    .attr("rx", 40 + Math.random() * 30)
+    .attr("ry", 20 + Math.random() * 10)
+    .attr("fill", "white")
+    .attr("opacity", 0.7);
+}
+
+// --- Groupe plantes ---
 const container = svg.append("g");
 
-// --- Variables de contrôle ---
-let currentActivePlants = 1;
-let lastScrollTime = 0;
-const scrollCooldown = 300; // 300ms entre deux scrolls
+// --- Fonctions utilitaires ---
+function getColor(habitus) {
+  const colors = {
+    Arbre: "#006400",
+    Buisson: "#8B008B",
+    Herbacée: "#32CD32",
+    "Plante aquatique": "#008080",
+    Liane: "#FF8C00",
+    Graminéen: "#DAA520",
+    Succulent: "#FFB6C1",
+  };
+  return colors[habitus] || "#808080";
+}
 
-// --- Afficher le compteur de néophytes ---
-d3.select("body")
-  .append("div")
-  .attr("id", "plant-count")
-  .text(`Nombre de néophytes : ${data.length}`);
+// Fonction pour créer une fleur SVG
+function createFlower(color) {
+  return `
+    <g class="flower">
+      <!-- Tige -->
+      <line x1="0" y1="0" x2="0" y2="-100" stroke="${color}" stroke-width="4"/>
+      <!-- Pétales -->
+      <circle cx="0" cy="-100" r="15" fill="${color}" opacity="0.8"/>
+      <circle cx="-15" cy="-85" r="10" fill="${color}" opacity="0.8"/>
+      <circle cx="15" cy="-85" r="10" fill="${color}" opacity="0.8"/>
+      <circle cx="-15" cy="-115" r="10" fill="${color}" opacity="0.8"/>
+      <circle cx="15" cy="-115" r="10" fill="${color}" opacity="0.8"/>
+      <!-- Centre de la fleur -->
+      <circle cx="0" cy="-100" r="8" fill="yellow"/>
+    </g>
+  `;
+}
 
-// --- Fonction pour mettre à jour l'affichage du jardin ---
+function getSizeScale() {
+  // Calcule la hauteur maximale disponible en pixels (75% de la hauteur de l'écran)
+  const pixelAvailable = screenHeight * 0.75;
+
+  // Crée une échelle linéaire de D3.js
+  return (
+    d3
+      .scaleLinear()
+      // Domaine : taille réelle des plantes en mètres (0.2m à 25m)
+      .domain([config.minSizeMeters, config.maxSizeMeters])
+      // Plage : taille en pixels (10px à pixelAvailable)
+      .range([10, pixelAvailable])
+      // Empêche les valeurs de sortir de la plage définie
+      .clamp(true)
+  );
+}
+
+function getPlantHeight(plant) {
+  // Récupère l'échelle de taille
+  const scale = getSizeScale();
+
+  // Convertit la taille maximale de la plante en pixels
+  // Si Taille_max n'existe pas, utilise 1 comme valeur par défaut
+  // Garantit une hauteur minimale de 10 pixels
+  return Math.max(scale(plant.Taille_max ?? 1), 10);
+}
+
+// --- Fonction pour calculer les positions des plantes ---
+function calculatePlantPositions() {
+  const positions = [];
+  const visibleWidth = screenWidth;
+  const totalWidth = Math.max(
+    visibleWidth,
+    (data.length - 1) * config.plantSpacing + 120
+  );
+
+  data.slice(0, currentActivePlants).forEach((d, i) => {
+    const x = 60 + i * config.plantSpacing;
+    const y = screenHeight - config.groundHeight - 10;
+    positions.push({ plant: d, x, y, height: getPlantHeight(d) });
+  });
+
+  // Mettre à jour la largeur du conteneur SVG pour permettre le défilement
+  svg.attr("width", totalWidth);
+  container.attr("transform", `translate(0, 0)`);
+
+  return positions;
+}
+
+// --- Fonction pour mettre à jour le jardin ---
 function updateGarden() {
-  container
+  const positions = calculatePlantPositions();
+
+  const plants = container
     .selectAll("g.plant")
-    .data(data.slice(0, currentActivePlants), (d) => d.taxon_id)
-    .join(
-      // --- Nouvelle plante ---
-      (enter) => {
-        const g = enter
-          .append("g")
-          .attr("class", "plant")
-          .attr("transform", (d, i) => getPlantPosition(i));
+    .data(positions, (d) => d.plant.id);
 
-        g.append("circle")
-          .attr("r", 0)
-          .attr("fill", (d) => getColor(d.Habitus))
-          .attr("opacity", 0.8)
-          .transition()
-          .duration(1000)
-          .attr("r", (d) => Math.sqrt(d.Taille_max ?? 100));
+  const enter = plants
+    .enter()
+    .append("g")
+    .attr("class", "plant")
+    .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
 
-        g.append("text")
-          .text((d) => d.Name.Nom_FR)
-          .attr("text-anchor", "middle")
-          .attr("dy", "-1.5em")
-          .style("font-size", "12px")
-          .style("fill", "#333")
-          .style("opacity", 0)
-          .transition()
-          .duration(800)
-          .style("opacity", 1);
+  enter.each(function (d, i) {
+    const flower = createFlower(getColor(d.plant.habitus));
+    const g = d3.select(this);
 
-        return g;
-      },
-      // --- Mise à jour des positions ---
-      (update) =>
-        update
-          .transition()
-          .duration(500)
-          .attr("transform", (d, i) => getPlantPosition(i)),
-      // --- Suppression ---
-      (exit) => exit.transition().duration(500).attr("opacity", 0).remove()
-    );
+    g.html(flower);
+
+    g.select("g.flower")
+      .attr("transform-origin", "0 0")
+      .attr("transform", "scale(0)")
+      .transition()
+      .delay(i * config.growDelay)
+      .duration(config.animationDuration)
+      .attr("transform", `scale(${d.height / 100})`);
+
+    g.append("text")
+      .attr("y", 20)
+      .attr("x", 0)
+      .attr("text-anchor", "middle")
+      .attr("font-size", "12px")
+      .attr("fill", "#333")
+      .text(`${d.plant.Taille_max ?? 1}m`);
+
+    animatedPlants.add(d.plant.id);
+  });
+
+  plants.exit().remove();
 }
 
-// --- Fonction pour calculer la position ---
-// La dernière plante ajoutée est tout à gauche (x=50)
-// Les suivantes se décalent vers la droite ➡️
-function getPlantPosition(i) {
-  const spacing = 100; // Espace fixe entre chaque plante
-  const total = currentActivePlants;
-  const x = 50 + (total - i - 1) * spacing; // inversé pour pousser à droite
-  const y = height - 50; // Aligné en bas
-  return `translate(${x}, ${y})`;
-}
-
-// --- Détecter si on est dans la section #chart ---
-function isInChartSection() {
-  const chart = document.querySelector("#chart");
-  const rect = chart.getBoundingClientRect();
-  return rect.top <= window.innerHeight && rect.bottom >= 0;
-}
-
-// --- Gestion du scroll ---
-window.addEventListener(
-  "wheel",
-  (event) => {
-    const now = Date.now();
-    if (now - lastScrollTime < scrollCooldown) return;
-    lastScrollTime = now;
-
-    if (isInChartSection()) {
-      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-        // ➡️ Uniquement si scroll horizontal
-        event.preventDefault();
-
-        const totalPlants = data.length;
-
-        if (event.deltaX > 0) {
-          // ➡️ Scroll vers la droite ➔ Ajouter une plante
-          if (currentActivePlants < totalPlants) {
-            currentActivePlants++;
-            updateGarden();
-          }
-        } else if (event.deltaX < 0) {
-          // ⬅️ Scroll vers la gauche ➔ Retirer une plante
-          if (currentActivePlants > 1) {
-            currentActivePlants--;
-            updateGarden();
-          }
-        }
-      }
-    }
-  },
-  { passive: false }
-); // Autoriser preventDefault()
-
-// --- Animation flottement doux des plantes ---
+// --- Oscillation plantes et déplacement nuages ---
 d3.timer((elapsed) => {
-  container.selectAll("g.plant").attr("transform", (d, i) => {
-    const spacing = 100;
-    const total = currentActivePlants;
-    const x = 50 + (total - i - 1) * spacing; // inversé pour animer aussi
-    const y = height - 50 + Math.sin(elapsed / 1000 + i) * 5;
-    return `translate(${x}, ${y})`;
+  const positions = calculatePlantPositions();
+  container.selectAll("g.plant").each(function (d, i) {
+    if (i >= positions.length) return;
+    const pos = positions[i];
+    const size = pos.height;
+    const speedFactor = 3000 - size * 5;
+    const x = pos.x;
+    const y = pos.y + Math.sin(elapsed / speedFactor + i) * 2;
+    d3.select(this).attr("transform", `translate(${x}, ${y})`);
+  });
+
+  clouds.selectAll("ellipse").each(function () {
+    const cloud = d3.select(this);
+    const currentX = parseFloat(cloud.attr("cx"));
+    cloud.attr("cx", ((currentX + 0.05) % (screenWidth + 100)) - 50);
   });
 });
 
-// --- Couleur selon type de plante ---
-function getColor(habitus) {
-  switch (habitus) {
-    case "Arbre":
-      return "darkgreen";
-    case "Buisson":
-      return "purple";
-    case "Herbacée":
-      return "limegreen";
-    case "Plante aquatique":
-      return "teal";
-    case "Liane":
-      return "orange";
-    case "Graminéen":
-      return "gold";
-    case "Succulent":
-      return "lightpink";
-    default:
-      return "gray";
-  }
+// --- Gestion redimensionnement fenêtre ---
+window.addEventListener("resize", () => {
+  const newDimensions = getDimensions();
+  screenWidth = newDimensions.screenWidth;
+  screenHeight = newDimensions.screenHeight;
+
+  svg.attr("width", screenWidth).attr("height", screenHeight);
+
+  svg
+    .select("rect:first-child")
+    .attr("width", screenWidth)
+    .attr("height", screenHeight);
+
+  svg
+    .select("rect:last-of-type")
+    .attr("y", screenHeight - config.groundHeight)
+    .attr("width", screenWidth);
+
+  updateGarden();
+});
+
+// --- Fonction pour la croissance automatique ---
+function startAutoGrowth() {
+  if (!isChartVisible) return;
+
+  const interval = setInterval(() => {
+    if (currentActivePlants < data.length && isChartVisible) {
+      currentActivePlants++;
+      updateGarden();
+    } else {
+      clearInterval(interval);
+    }
+  }, config.autoGrowInterval);
 }
 
-// --- Lancer une première fois ---
-updateGarden();
+// --- Configuration de l'observateur d'intersection ---
+function setupIntersectionObserver() {
+  const chartSection = document.getElementById("chart");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        //Vérifier que ce n'est pas dans le set
+        if (entry.isIntersecting) {
+          isChartVisible = true;
+          startAutoGrowth();
+        } else {
+          isChartVisible = false;
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Déclenche quand 50% de la section est visible
+    }
+  );
+
+  observer.observe(chartSection);
+}
+
+// --- Gestion du défilement horizontal ---
+function setupHorizontalScroll() {
+  const chartSection = document.getElementById("chart");
+  chartSection.style.overflowX = "auto";
+  chartSection.style.overflowY = "hidden";
+  chartSection.style.whiteSpace = "nowrap";
+}
+
+// --- Initialisation ---
+//updateGarden();
+setupHorizontalScroll();
+setupIntersectionObserver();

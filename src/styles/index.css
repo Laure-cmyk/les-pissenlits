@@ -61,28 +61,22 @@ em{
     background-color: red;
 }
 
-/* --- Jardin de plantes --- */
+/* Jardin */
 #chart {
-    background-color: #eaffea; /* vert très pâle pour ton jardin */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* --- SVG utilisé dans le jardin --- */
-svg {
+    background-color: #eaffea;
+    /* height: 100vh;
+    width: 100vw; */
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  
+  /* SVG */
+  svg {
     display: block;
+  
 }
 
-/* --- Compteur de plantes --- */
-#plant-count {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    font-size: 16px;
-}
+
+  
