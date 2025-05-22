@@ -14,7 +14,7 @@ export async function displaySpecificPlants(plants) {
   let svg;
 
   try {
-    svg = await loadSvg("/images/plant_placeholder.svg");
+    svg = await loadSvg("/images/plants/" + plants[0].img);
   } catch (e) {
     console.error(`Failed to load SVG`, e);
     svg = await loadSvg("/images/plant_placeholder.svg");

@@ -2,8 +2,12 @@ const menaceClick = new CustomEvent("menaceClick");
 const provenanceClick = new CustomEvent("provenanceClick");
 const carteClick = new CustomEvent("carteClick");
 
+import { loadSvg } from "@/lib/fetcher.js";
+
+let placeHolder = await loadSvg("/images/plant_placeholder.svg");
+
 class SpecificPlant extends HTMLElement {
-  static observedAttributes = ["name", "latin", "description", "plants"];
+  static observedAttributes = ["name", "latin", "description", "plants","svg"];
 
   plants = [];
 
@@ -27,7 +31,7 @@ class SpecificPlant extends HTMLElement {
     this.setupButtons();
   }
 
-  setupList(savedScrollTop) {
+  async setupList(savedScrollTop) {
     const plantSelector = this.querySelector("#plants-list");
 
     if (!plantSelector) return;
@@ -39,14 +43,33 @@ class SpecificPlant extends HTMLElement {
       plantItem.dataset.description = plant.Habitus;
       plantItem.dataset.name = plant.Name.Nom_FR;
       plantItem.dataset.nameLatin = plant.Nom_scientifique;
+      plantItem.dataset.svg = plant.img || "";
+
       plantItem.innerText = plant.Name.Nom_FR;
-      plantItem.addEventListener("click", () => {
+
+      plantItem.addEventListener("click", async () => {
         const plantItems = this.querySelectorAll(".plant-item");
         plantItems.forEach((i) => i.classList.remove("active"));
+
+
         this.setAttribute("name", plantItem.dataset.name);
         this.setAttribute("latin", plantItem.dataset.nameLatin);
         this.setAttribute("description", plantItem.dataset.description);
-        plantItem.classList.add("active");
+
+        let svg = null;
+        try {
+          if (plantItem.dataset.svg) {
+            svg = await loadSvg("images/plants/" + plantItem.dataset.svg);
+            
+          } else {
+            svg = placeHolder;
+          }
+        } catch (e) {
+          svg = placeHolder;
+        }
+
+        this.setAttribute("svg", svg);
+
       });
       // Highlight the active item
       if (
