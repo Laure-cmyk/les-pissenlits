@@ -94,11 +94,33 @@ L.geoJSON(switzerlandGeoJSON, {
         fillColor: 'white',
         fillOpacity: 1
     }
+}).addTo(map); */
+
+let map = L.map("map", { 
+    zoomControl: false, 
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    minZoom: 7,          // Empêcher un zoom trop éloigné
+    maxZoom: 18,         // Limiter le zoom maximum
+    maxBounds: [         // Limiter le déplacement à la Suisse
+        [45.5, 5.5],     // Sud-Ouest
+        [48.0, 11.5]     // Nord-Est
+    ]
+}).setView([46.822, 8.224], 8);
+
+L.tileLayer('https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.leichte-basiskarte_reliefschattierung/default/current/3857/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.geo.admin.ch/fr/home.html">geo.admin.ch</a>'
 }).addTo(map);
- */
+
+// Ajouter la couche des néophytes
+L.tileLayer('https://wmts.geo.admin.ch/1.0.0/ch.bafu.neophyten-druesiges_springkraut/default/current/3857/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.geo.admin.ch/fr/home.html">geo.admin.ch</a>',
+    opacity: 0.7
+}).addTo(map);
+
 
 /* Code pour la worldmap */
-let worldmap = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([20, 0], 2);
+/* let worldmap = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([20, 0], 2);
 
 const countryCoordinates = {
     "Chine": { lat: 35.8617, lng: 104.1954 },
@@ -133,14 +155,12 @@ neophytesData.forEach(plant => {
         
         // Add popup with plant information
         marker.bindPopup(`
-            <strong>${plant.Name.Nom_FR}</strong><br>
-            Nom scientifique: ${plant.Nom_scientifique}<br>
-            Origine: ${plant.Origine}
+            ${plant.Origine}
         `);
         
         marker.addTo(worldmap);
     }
-});
+}); */
 
 
 
