@@ -6,11 +6,11 @@ const config = {
   plantSpacing: 400,
   minSizeMeters: 0.2,
   maxSizeMeters: 25,
-  animationDuration: 800,
-  growDelay: 400, // Temps avant qu'une nouvelle plante ne s'affiche (en ms)
-  groundHeight: 30,
+  animationDuration: 300,
+  growDelay: 100, // Temps avant qu'une nouvelle plante ne s'affiche (en ms)
+  groundHeight: 70, //Hauteur de la bande d'herbe
   maxVisiblePlants: 8, // Nombre maximum de plantes visibles à l'écran
-  autoGrowInterval: 2000, // Intervalle entre chaque nouvelle plante (en ms)
+  autoGrowInterval: 300, // Intervalle entre chaque nouvelle plante (en ms)
 };
 
 let currentActivePlants = 0;
@@ -179,7 +179,7 @@ function updateGarden() {
 
   const plants = container
     .selectAll("g.plant")
-    .data(positions, (d) => d.plant.id);
+    .data(positions, (d) => d.plant.taxon_id);
 
   const enter = plants
     .enter()
@@ -200,6 +200,7 @@ function updateGarden() {
       .delay(i * config.growDelay)
       .duration(config.animationDuration)
       .attr("transform", `scale(${d.height / 100})`);
+      
 
     g.append("text")
       .attr("y", 20)
@@ -209,7 +210,7 @@ function updateGarden() {
       .attr("fill", "#333")
       .text(`${d.plant.Taille_max ?? 1}m`);
 
-    animatedPlants.add(d.plant.id);
+    animatedPlants.add(d.plant.taxon_id);
   });
 
   plants.exit().remove();
