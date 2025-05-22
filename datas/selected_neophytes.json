@@ -22,7 +22,8 @@
         "Versant S Alpes": "> 500"
       },
       "Taille_min": null,
-      "Taille_max": 300
+      "Taille_max": 300,
+      "img":"Buddleja_davidii_Franch.svg"
     },
     {
       "taxon_id": 1017510,
@@ -46,7 +47,8 @@
         "Versant S Alpes": "> 500"
       },
       "Taille_min": 30,
-      "Taille_max": 150
+      "Taille_max": 150,
+      "img":"Vergerette_annuelle.svg"
     },
     {
       "taxon_id": 1022580,
@@ -70,7 +72,8 @@
         "Versant S Alpes": "> 500"
       },
       "Taille_min": 300,
-      "Taille_max": 500
+      "Taille_max": 500,
+      "img":"Berce_du_Caucase.svg"
     },
     {
       "taxon_id": 1024410,

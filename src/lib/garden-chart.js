@@ -1,5 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import data from "/datas/selected_neophytes.json" assert { type: "json" };
+import { loadSvg } from "@/lib/fetcher.js";
 
 // --- Configuration ---
 const config = {
@@ -23,6 +24,11 @@ data.forEach((d) => {
   if (d.Taille_max != null) d.Taille_max /= 100;
 });
 data.sort((a, b) => (b.Taille_max ?? 0) - (a.Taille_max ?? 0));
+
+console.log(data);
+
+const nbNeophytes = document.querySelector("#plant-count");
+nbNeophytes.innerHTML = `Nombre de néophytes : ${data.length}`;
 
 // --- Dimensions ---
 function getDimensions() {
@@ -106,8 +112,34 @@ function getColor(habitus) {
   return colors[habitus] || "#808080";
 }
 
+const berceSvg = await loadSvg("/images/plants/Berce_du_Caucase.svg");
+const buddlejaSvg = await loadSvg("/images/plants/Buddleja_davidii_Franch.svg");
+const vergeretteSvg = await loadSvg("/images/plants/Vergerette_annuelle.svg");
+const placeholderSvg = await loadSvg("/images/plant_placeholder.svg");
+
 // Fonction pour créer une fleur SVG
-function createFlower(color) {
+function createFlower(plantName) {
+  let plantSvg = null;
+
+  switch(plantName) {
+    case "Heracleum mantegazzianum Sommier & Levier":
+      plantSvg = berceSvg;
+      break;
+    case "Buddleja davidii Franch.":
+      plantSvg = buddlejaSvg;
+      break;
+    case "Erigeron annuus (L.) Desf.":
+      plantSvg = vergeretteSvg;
+      break;
+    default:
+      plantSvg = placeholderSvg;
+      break;
+  }
+
+  // Si le SVG n'est pas trouvé, renvoie une fleur par défaut
+  return plantSvg || "<g></g>";
+
+  /*
   return `
     <g class="flower">
       <!-- Tige -->
@@ -122,6 +154,7 @@ function createFlower(color) {
       <circle cx="0" cy="-100" r="8" fill="yellow"/>
     </g>
   `;
+  */
 }
 
 function getSizeScale() {
@@ -162,7 +195,7 @@ function calculatePlantPositions() {
 
   data.slice(0, currentActivePlants).forEach((d, i) => {
     const x = 60 + i * config.plantSpacing;
-    const y = screenHeight - config.groundHeight - 10;
+    const y = 0; //screenHeight - config.groundHeight - 10;
     positions.push({ plant: d, x, y, height: getPlantHeight(d) });
   });
 
@@ -188,11 +221,10 @@ function updateGarden() {
     .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
 
   enter.each(function (d, i) {
-    const flower = createFlower(getColor(d.plant.habitus));
+    const flower = createFlower(d.plant.Nom_scientifique);
     const g = d3.select(this);
 
     g.html(flower);
-
     g.select("g.flower")
       .attr("transform-origin", "0 0")
       .attr("transform", "scale(0)")
@@ -200,10 +232,9 @@ function updateGarden() {
       .delay(i * config.growDelay)
       .duration(config.animationDuration)
       .attr("transform", `scale(${d.height / 100})`);
-      
 
     g.append("text")
-      .attr("y", 20)
+      .attr("y", screenHeight - config.groundHeight)
       .attr("x", 0)
       .attr("text-anchor", "middle")
       .attr("font-size", "12px")
