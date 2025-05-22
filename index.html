@@ -6,6 +6,7 @@
     <title>Les néophytes du canton de Vaud</title>
     <link rel="stylesheet" href="./src/styles/index.css" />
     <script src="./src/index.js" type="module" defer></script>
+    <script src="./src/lib/garden-chart.js" type="module" defer></script>
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
     <script
       src="./src/customElements/SpecificPlant.js"
@@ -69,9 +70,11 @@
         </div>
       </section>
 
-      <section id="specific-plant">
-        
+      <section id="chart">
+        <div id="plant-count">Néophytes : 0</div>
+      </section>
 
+      <section id="specific-plant">
         <!-- Map Modal -->
         <div id="map-modal" class="map-modal">
           <div class="map-modal-content">
@@ -79,14 +82,13 @@
             <div id="map"></div>
           </div>
         </div>
-        
       </section>
 
       <section id="information">
         <h1>S'informer</h1>
         <p>Restez informé en vous rendant sur le site d'Info Flora</p>
         <a href="https://www.infoflora.ch/fr/home.html" target="_blank">
-        <img src="images/infoflora.jpg" alt="Info Flora" />
+          <img src="images/infoflora.jpg" alt="Info Flora" />
         </a>
       </section>
     </main>
