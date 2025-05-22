@@ -65,31 +65,30 @@ import worldMap from "geojson-world-map";
 import neophytesData from "../datas/selected_neophytes.json";
 import fleurIcon from "./assets/fleur2.png";
 
-/* Code pour la map Suisse */
+/* Carte Suisse */
+let map = L.map("map", {
+  zoomControl: false,
+  scrollWheelZoom: false,
+  doubleClickZoom: false,
+  minZoom: 7,          // Empêcher un zoom trop éloigné
+  maxZoom: 18,         // Limiter le zoom maximum
+  maxBounds: [         // Limiter le déplacement à la Suisse
+    [45.5, 5.5],     // Sud-Ouest
+    [48.0, 11.5]     // Nord-Est
+  ]
+}).setView([46.822, 8.224], 8);
 
-/* let map = L.map("map", { zoomControl: false, scrollWheelZoom: false }).setView([46.822, 8.224], 8);
-
-const switzerlandGeoJSON = worldMap.features.find(feature => feature.properties.name === 'Switzerland');
-
-// Create a white background
-L.rectangle([[-90, -180], [90, 180]], {
-    color: 'white',
-    fillColor: '#EDDDC8',
-    fillOpacity: 1
+L.tileLayer('https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.leichte-basiskarte_reliefschattierung/default/current/3857/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.geo.admin.ch/fr/home.html">geo.admin.ch</a>'
 }).addTo(map);
 
-// Add Switzerland's outline
-L.geoJSON(switzerlandGeoJSON, {
-    style: {
-        color: 'black',
-        weight: 2,
-        fillColor: 'white',
-        fillOpacity: 1
-    }
+// Ajouter la couche des néophytes
+L.tileLayer('https://wmts.geo.admin.ch/1.0.0/ch.bafu.neophyten-druesiges_springkraut/default/current/3857/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.geo.admin.ch/fr/home.html">geo.admin.ch</a>',
+  opacity: 0.7
 }).addTo(map);
- */
 
-/* Code pour la worldmap */
+/* Carte du monde */
 let worldmap = L.map("map", {
   zoomControl: false,
   scrollWheelZoom: false,
@@ -101,7 +100,11 @@ const countryCoordinates = {
   Chine: { lat: 35.8617, lng: 104.1954 },
   Japon: { lat: 36.2048, lng: 138.2529 },
   Canada: { lat: 56.1304, lng: -106.3468 },
-  // Ajouter d'autres pays selon vos besoins
+  Inde: { lat: 20.5937, lng: 78.9629 },
+  Canada: { lat: 56.1304, lng: -106.3468 },
+  "Afrique du Sud": { lat: -30.5595, lng: 22.9375 },
+  Russie: { lat: 61.5240, lng: 105.3188 },
+  "États-Unis": { lat: 37.0902, lng: -95.7129 },
 };
 
 // Add all countries
