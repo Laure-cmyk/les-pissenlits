@@ -4,3 +4,5 @@
 
 .DS_Store
 .tool-versions
+# Local Netlify folder
+.netlify

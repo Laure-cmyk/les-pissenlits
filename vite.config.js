@@ -5,7 +5,7 @@ export default defineConfig({
   // root: "src", // Set the root to 'src'
 
   build: {
-    target: "es6",
+    target: "esnext",
 
     outDir: "../dist", // Output directory (relative to the root)
 
