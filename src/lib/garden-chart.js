@@ -179,7 +179,7 @@ function calculatePlantPositions() {
 
   data.slice(0, currentActivePlants).forEach((d, i) => {
     const x = 60 + i * config.plantSpacing;
-    const y = 0; //screenHeight - config.groundHeight - 10;
+    const y = screenHeight - config.groundHeight;
     positions.push({ plant: d, x, y, height: getPlantHeight(d) });
   });
 
@@ -205,35 +205,29 @@ function updateGarden() {
     .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
 
   enter.each(function (d, i) {
-    //const flower = createFlower(d.plant.img);
     const g = d3.select(this);
     const imgPath = createFlower(d.plant.img);
+    const scale = d.height / 80; // 80 = hauteur image source
 
-    // Append SVG image
-    g.append("image")
+    // On place le groupe à la base, puis on scale depuis la base
+    const imageGroup = g.append("g")
+      .attr("transform", `translate(0, 0) scale(0)`)
+      .attr("class", "image-group");
+
+    imageGroup.append("image")
       .attr("href", imgPath)
-      .attr("width", 80) // adjust as needed
-      .attr("height", 80) // adjust as needed
-      .attr("transform-origin", "0 0")
-      .attr("transform", "scale(0)")
-      .transition()
-      .delay(i * config.growDelay)
-      .duration(config.animationDuration)
-      .attr("transform", `scale(${d.height / 100})`);
-    /*
-    const g = d3.select(this);
+      .attr("width", 80)
+      .attr("height", 80)
+      .attr("x", -40)   // centre horizontalement
+      .attr("y", -80);  // base de l'image sur y=0
 
-    g.html(flower);
-    g.select("g.flower")
-      .attr("transform-origin", "0 0")
-      .attr("transform", "scale(0)")
-      .transition()
+    imageGroup.transition()
       .delay(i * config.growDelay)
       .duration(config.animationDuration)
-      .attr("transform", `scale(${d.height / 100})`);
-    */
+      .attr("transform", `translate(0, 0) scale(${scale})`);
+
     g.append("text")
-      .attr("y", screenHeight - config.groundHeight)
+      .attr("y", -d.height - 10) // Positionne le texte au-dessus de la plante
       .attr("x", 0)
       .attr("text-anchor", "middle")
       .attr("font-size", "12px")

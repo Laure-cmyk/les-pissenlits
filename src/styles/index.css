@@ -25,12 +25,17 @@ section {
 
 #introduction {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#introduction h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
 #introduction p{
@@ -55,6 +60,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 3em;
+  text-align: center;;
   width: 80%; /* Adjust width for better layout */
   height: 80%; /* Adjust height for better layout */
   background-color: var(--background-color);
@@ -355,13 +362,13 @@ specific-plant button{
   padding: 50px;
 }
 
-#information h1{
-  font-size: 5em;
+#information h2{
+  font-size: 3em;
   margin-bottom: 20px;
 }
 
 #information p{
-  font-size:3em;
+  font-size:1em;
 }
 
 #information a {
