@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     target: "esnext",
 
-    outDir: "../dist", // Output directory (relative to the root)
+    outDir: "dist", // Output directory (relative to the root)
 
     emptyOutDir: true, // Clean the output directory before building
   },
