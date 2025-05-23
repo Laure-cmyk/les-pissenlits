@@ -80,11 +80,18 @@ class SpecificPlant extends HTMLElement {
 
   setupButtons() {
     const menacesBtn = this.querySelector(".menaces-btn");
+    const cartesBtn = this.querySelector(".cartes-btn");
     const provenanceBtn = this.querySelector(".provenance-btn");
     if (menacesBtn) {
       menacesBtn.onclick = (e) => {
         e.preventDefault();
         this.dispatchEvent(menaceClick);
+      };
+    }
+    if (cartesBtn) {
+      cartesBtn.onclick = (e) => {
+        e.preventDefault();
+        this.dispatchEvent(carteClick);
       };
     }
     if (provenanceBtn) {
@@ -113,7 +120,7 @@ class SpecificPlant extends HTMLElement {
             </div>
             <div id="plant-buttons">
                 <button class="provenance-btn">Provenance</button>
-                <button>Cartes</button>
+                <button class="cartes-btn">Cartes</button>
                 <button class="menaces-btn">Menaces</button>
             </div>
         </div>

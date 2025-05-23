@@ -10,6 +10,7 @@ export async function displaySpecificPlants(plants) {
   const menaceModal = document.createElement(`menace-modal`);
   const provenanceMap = document.querySelector("#map");
   console.log(provenanceMap);
+  const carteModal = document.querySelector("#swiss-map")
 
   let svg;
 
@@ -31,11 +32,28 @@ export async function displaySpecificPlants(plants) {
     menaceModal.setAttribute("active", true);
   });
 
+specificPlant.addEventListener("carteClick", () => {
+  document.dispatchEvent(new CustomEvent("openMapModal", {
+    detail: { mapType: 'swiss' }
+  }));
+});
+
+specificPlant.addEventListener("provenanceClick", () => {
+  document.dispatchEvent(new CustomEvent("openMapModal", {
+    detail: { mapType: 'world' }
+  }));
+});
+
+/*   specificPlant.addEventListener("carteClick", () => {
+    console.log("open carte");
+    document.dispatchEvent(new CustomEvent("openMapModal"));
+  });
+
   specificPlant.addEventListener("provenanceClick", () => {
     console.log("open provenance");
     document.dispatchEvent(new CustomEvent("openMapModal"));
     //provenanceMap.classList.toggle("active");
-  });
+  }); */
 
   specificPlantSection.append(specificPlant);
   
