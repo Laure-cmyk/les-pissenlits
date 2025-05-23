@@ -9,7 +9,6 @@ class MenaceModal extends HTMLElement {
 
   attributeChangedCallback() {
     this.render();
-    console.log("MenaceModal svg", this.getAttribute("svg"));
   }
 
   render() {

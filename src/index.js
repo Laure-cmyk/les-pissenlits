@@ -65,7 +65,9 @@ import worldMap from "geojson-world-map";
 import neophytesData from "../datas/selected_neophytes.json";
 import fleurIcon from "./assets/fleur2.png";
 
+
 /* Carte Suisse */
+/*
 let map = L.map("map", {
   zoomControl: false,
   scrollWheelZoom: false,
@@ -87,6 +89,7 @@ L.tileLayer('https://wmts.geo.admin.ch/1.0.0/ch.bafu.neophyten-druesiges_springk
   attribution: '&copy; <a href="https://www.geo.admin.ch/fr/home.html">geo.admin.ch</a>',
   opacity: 0.7
 }).addTo(map);
+*/
 
 /* Carte du monde */
 let worldmap = L.map("map", {
@@ -144,7 +147,7 @@ neophytesData.forEach((plant) => {
 
 // Show the map modal (call this when you want to open the map)
 function openMapModal() {
-  document.getElementById("map-modal").classList.add("active");
+  document.querySelector("#map-modal").classList.toggle("active");
   setTimeout(() => {
     worldmap.invalidateSize(); // <-- Add this line
     window.dispatchEvent(new Event("resize")); // Fix Leaflet map display in modal
