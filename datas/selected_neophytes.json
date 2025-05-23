@@ -105,7 +105,8 @@
       "Versant S Alpes": "> 500"
     },
     "Taille_min": 100,
-    "Taille_max": 200
+    "Taille_max": 200,
+    "img":"Impatiente_glanduleuse.png"
   },
   {
     "taxon_id": 1036590,
@@ -156,7 +157,8 @@
       "Versant S Alpes": "51-500"
     },
     "Taille_min": null,
-    "Taille_max": 1000
+    "Taille_max": 1000,
+    "img":"Kiwi.png"
   },
   {
     "taxon_id": 1038140,
@@ -183,7 +185,8 @@
       "Versant S Alpes": "> 500"
     },
     "Taille_min": 7,
-    "Taille_max": 20
+    "Taille_max": 20,
+    "img":"Renouee_du_japon.png"
   },
   {
     "taxon_id": 1038390,
@@ -290,7 +293,8 @@
       "Versant S Alpes": "> 500"
     },
     "Taille_min": null,
-    "Taille_max": 1500
+    "Taille_max": 1500,
+    "img":"Palmier.png"
   },
   {
     "taxon_id": 1044575,
@@ -389,7 +393,8 @@
       "Versant S Alpes": "51-500"
     },
     "Taille_min": 60,
-    "Taille_max": 200
+    "Taille_max": 200,
+    "img":"Sorgho.png"
   },
   {
     "taxon_id": 1043020,
