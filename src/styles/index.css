@@ -1,6 +1,11 @@
 @import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 
 body {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
   height: 100vh;
   --background-color: #edddc8;
@@ -21,10 +26,16 @@ section {
 #introduction {
   text-align: center;
   font-size: 2em;
+  letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#introduction p{
+  width: 80%;
+  line-height: 1.5em;
 }
 
 #general-info {
@@ -52,18 +63,17 @@ section {
 em {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #1C6B33;
 }
 
-#map {
-  background-color: red;
-}
 
 #specific-plant {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #plants-list {
@@ -74,37 +84,37 @@ em {
 }
 
 /* Cache la barre de défilement verticale*/
-#plants-list::-webkit-scrollbar{
-    display: none;
+#plants-list::-webkit-scrollbar {
+  display: none;
 }
 
-.plant-item{
-    padding: 10px;
-    margin: 5px 0;
-    cursor: pointer;
-    background-color: #e3f2fd;
-    text-align: center;
-    transition: background-color 0.3s ease;
+.plant-item {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  text-align: center;
+  /*transition: background-color 0.3s ease;*/
 }
 
 .plant-item.active {
   font-size: 1.1rem;
   font-weight: bold;
+  background-color: #e3f2fd;
 }
 
 /* Style des boutons de défilement */
 .scroll-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #bbdefb;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
+  width: 100%;
+  padding: 10px;
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
 
 specific-plant {
-  width: 50%;
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -115,11 +125,39 @@ specific-plant #plant-svg {
   height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-specific-plant #plant-svg svg {
+specific-plant #plant-svg img {
   width: 200px;
-  height: 200px;
+  
+}
+
+
+specific-plant #plant-name-lat{
+  color: rgba(0, 0, 0, 0.53);
+}
+
+#plant-name-descr{
+  padding:0 0 0 20px;
+  border-left: 1px solid #000;
+}
+
+specific-plant #plant-buttons{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:10px;
+}
+
+specific-plant button{
+  padding: 10px 20px;
+  background-color: #79f0f0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
 
 
@@ -133,9 +171,10 @@ specific-plant #plant-svg svg {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal.active {
@@ -174,54 +213,181 @@ specific-plant #plant-svg svg {
   cursor: pointer;
 }
 
-.modal-plant{
+.modal-plant {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.modal-plant div{
+.modal-plant div {
   width: 50%;
 }
 
-.modal-plant img{
+.modal-plant img {
   width: 80%;
 }
 
-.modal-plant-info{
-  display:flex;
+.modal-plant svg{
+  width: 100px;
+  height: auto;
+}
+
+.modal-plant-info {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
 
-
-.modal-plant-name{
+.modal-plant-name {
   padding: 0 0;
-  margin: 0 0 ;
+  margin: 0 0;
   font-size: 1.2em;
   font-weight: bold;
 }
-.modal-plant-latin{
+.modal-plant-latin {
   padding: 0 0;
-  margin: 0 0 ;
+  margin: 0 0;
   font-style: italic;
-  color:#888;
+  color: #888;
 }
 
-.modal-plant-menace{
+.modal-plant-menace {
   margin: 10px 0 10px 0;
 }
 
-.modal-btn{
+.modal-btn {
   align-self: center;
   padding: 10px 40px;
   border-style: none;
   border-radius: 30px;
-  background-color: #79F0F0;
+  background-color: #79f0f0;
 }
 
-.modal-btn:hover{
-  background-color: #4DD0E1;
+.modal-btn:hover {
+  background-color: #4dd0e1;
   cursor: pointer;
 }
+
+
+/* PROVENANCE MAP */
+
+
+#map {
+  width: 80vw;
+  height: 60vh;
+  min-height: 300px;
+  min-width: 300px;
+  position: absolute;
+  background-color: var(--background-color);
+  display: none;
+}
+
+#map.active {
+  display: inline;
+}
+
+
+/* Map Modal Styles */
+.map-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+}
+
+.map-modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-modal-content {
+  background: var(--background-color, #edddc8);
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  width: 85vw;
+  max-width: 1100px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.map-modal-content #map,
+.map-modal-content #swiss-map {
+  background-color: var(--background-color);
+  flex: 1 1 auto;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  position: relative;
+  font-family: "Gloria Hallelujah", cursive;
+  display: block;
+}
+
+.map-modal .close {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+/* S'INFORMER */
+
+#information{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#information h1{
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+
+#information p{
+  font-size:3em;
+}
+
+#information a {
+  display: flex;
+  justify-content: center;
+}
+
+#information img{
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* Jardin */
+#chart {
+    background-color: #eaffea;
+    height: 100vh;
+    width: 100vw; 
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  
+  /* SVG */
+  svg {
+    display: block;
+}
+

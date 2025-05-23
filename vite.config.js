@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
-  root: "src", // Set the root to 'src'
+  // root: "src", // Set the root to 'src'
 
   build: {
     target: "es6",
