@@ -109,30 +109,6 @@
     "img":"Impatiente_glanduleuse.png"
   },
   {
-    "taxon_id": 1036590,
-    "Nom_scientifique": "Prunus laurocerasus L.",
-    "LIST_2021": "INV",
-    "Habitus": "Buisson",
-    "IFL 2014": "BlackList",
-    "Annexe 2.1 (ODE)": "",
-    "Annexe 2.2(ODE)": "Espèce Interdite",
-    "Name": {
-      "Name_DE": "Kirschlorbeer",
-      "Nom_FR": "Laurier-cerise",
-      "Nome_IT": "Lauroceraso"
-    },
-    "Observations": {
-      "Jura": "> 500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "> 500",
-      "Alpes centrales O": "> 500",
-      "Alpes centrales E": "1-50",
-      "Versant S Alpes": "> 500"
-    },
-    "Taille_min": 10,
-    "Taille_max": 600
-  },
-  {
     "taxon_id": 1000740,
     "Nom_scientifique": "Actinidia chinensis Planch.",
     "LIST_2021": "P_INV",
@@ -216,30 +192,7 @@
     "Taille_max": 600,
     "img":"Sumac.png"
   },
-  {
-    "taxon_id": 1038500,
-    "Nom_scientifique": "Robinia pseudoacacia L.",
-    "LIST_2021": "INV",
-    "Habitus": "Arbre",
-    "IFL 2014": "BlackList",
-    "Annexe 2.1 (ODE)": "",
-    "Annexe 2.2(ODE)": "",
-    "Name": {
-      "Name_DE": "Robinie",
-      "Nom_FR": "Robinier",
-      "Nome_IT": "Robinia"
-    },
-    "Observations": {
-      "Jura": "> 500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "> 500",
-      "Alpes centrales O": "> 500",
-      "Alpes centrales E": "51-500",
-      "Versant S Alpes": "> 500"
-    },
-    "Taille_min": null,
-    "Taille_max": 2500
-  },
+  
   {
     "taxon_id": 1043360,
     "Nom_scientifique": "Senecio inaequidens DC.",
@@ -297,81 +250,6 @@
     "img":"Palmier.png"
   },
   {
-    "taxon_id": 1044575,
-    "Nom_scientifique": "Solidago canadensis aggr.",
-    "LIST_2021": "INV",
-    "Habitus": "Herbacée",
-    "IFL 2014": "/",
-    "Annexe 2.1 (ODE)": "Espèce Interdite",
-    "Annexe 2.2(ODE)": "",
-    "Name": {
-      "Name_DE": "Kanadische Goldrute",
-      "Nom_FR": "Solidage du Canada",
-      "Nome_IT": "Verga d'oro americana"
-    },
-    "Observations": {
-      "Jura": "> 500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "> 500",
-      "Alpes centrales O": "> 500",
-      "Alpes centrales E": "> 500",
-      "Versant S Alpes": "51-500"
-    },
-    "Taille_min": 50,
-    "Taille_max": 250
-  },
-  {
-    "taxon_id": 1044590,
-    "Nom_scientifique": "Solidago canadensis aggr. - Solidago gigantea Aiton",
-    "LIST_2021": "INV",
-    "Habitus": "Herbacée",
-    "IFL 2014": "BlackList",
-    "Annexe 2.1 (ODE)": "Espèce Interdite",
-    "Annexe 2.2(ODE)": "",
-    "Name": {
-      "Name_DE": "Spätblühende Goldrute",
-      "Nom_FR": "Solidage géant",
-      "Nome_IT": "Verga d'oro maggiore"
-    },
-    "Observations": {
-      "Jura": "> 500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "> 500",
-      "Alpes centrales O": "51-500",
-      "Alpes centrales E": "51-500",
-      "Versant S Alpes": "> 500"
-    },
-    "Taille_min": null,
-    "Taille_max": 120
-  },
-  {
-    "taxon_id": 1016360,
-    "Nom_scientifique": "Elodea canadensis Michx.",
-    "LIST_2021": "INV",
-    "Habitus": "Plante aquatique",
-    "IFL 2014": "BlackList",
-    "Description": "Grâce à leur croissance rapide et leur capacité d’adaptation à la qualité de l’eau, les élodées du Canada sont très compétitives et peuvent recouvrir entièrement un plan d’eau calme aussi bien en surface qu’en profondeur. Cette densité bloquant la lumière dans les points d’eau, les plantes natives n’arrivent pas à se développer. Ce phénomène appauvrit la biodiversité et l’écosystème indigène. Leur présence contribue également à créer des eaux stagnantes.",
-    "tileUrl": "ch.bafu.neophyten-kanadische_wasserpest",
-    "Origine": "Canada",
-    "Annexe 2.1 (ODE)": "Espèce Interdite",
-    "Annexe 2.2(ODE)": "",
-    "Name": {
-      "Name_DE": "Kanadische Wasserpest",
-      "Nom_FR": "Elodée du Canada",
-      "Nome_IT": "Peste d'acqua comune"
-    },
-    "Observations": {
-      "Jura": "51-500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "> 500",
-      "Alpes centrales O": "51-500",
-      "Alpes centrales E": "1-50",
-      "Versant S Alpes": "1-50"
-    },
-    "Taille_min": 30,
-    "Taille_max": 300
-  },
-  {
     "taxon_id": 1044850,
     "Nom_scientifique": "Sorghum halepense (L.) Pers.",
     "LIST_2021": "P_INV",
@@ -395,29 +273,5 @@
     "Taille_min": 60,
     "Taille_max": 200,
     "img":"Sorgho.png"
-  },
-  {
-    "taxon_id": 1043020,
-    "Nom_scientifique": "Sedum spurium M. Bieb.",
-    "LIST_2021": "INV",
-    "Habitus": "Succulent",
-    "IFL 2014": "WatchList",
-    "Annexe 2.1 (ODE)": "",
-    "Annexe 2.2(ODE)": "Espèce Interdite",
-    "Name": {
-      "Name_DE": "Kaukasus-Fettkraut",
-      "Nom_FR": "Orpin bâtard",
-      "Nome_IT": "Borracina caucasica"
-    },
-    "Observations": {
-      "Jura": "51-500",
-      "Plateau": "> 500",
-      "Versant N Alpes": "51-500",
-      "Alpes centrales O": "1-50",
-      "Alpes centrales E": "1-50",
-      "Versant S Alpes": "1-50"
-    },
-    "Taille_min": 10,
-    "Taille_max": 20
   }
 ]
