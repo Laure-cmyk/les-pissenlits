@@ -140,6 +140,9 @@ specific-plant #plant-svg img {
   
 }
 
+specific-plant #plant-info {
+  width: 200px;
+}
 
 specific-plant #plant-name-lat{
   color: rgba(0, 0, 0, 0.53);

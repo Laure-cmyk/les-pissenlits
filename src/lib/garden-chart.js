@@ -218,7 +218,7 @@ function updateGarden() {
       .attr("href", imgPath)
       .attr("width", 80)
       .attr("height", 80)
-      .attr("x", -40)   // centre horizontalement
+      .attr("x", 0)   // centre horizontalement
       .attr("y", -80);  // base de l'image sur y=0
 
     imageGroup.transition()
