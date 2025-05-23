@@ -33,7 +33,6 @@ const tlGeneralInfo = gsap.timeline({
     scrub: 1,
     pin: true,
     pin: true,
-    markers: true, // Remove in production
   },
 });
 
