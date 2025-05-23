@@ -118,26 +118,10 @@ const vergeretteSvg = await loadSvg("/images/plants/Vergerette_annuelle.svg");
 const placeholderSvg = await loadSvg("/images/plant_placeholder.svg");
 
 // Fonction pour créer une fleur SVG
-function createFlower(plantName) {
-  let plantSvg = null;
-
-  switch(plantName) {
-    case "Heracleum mantegazzianum Sommier & Levier":
-      plantSvg = berceSvg;
-      break;
-    case "Buddleja davidii Franch.":
-      plantSvg = buddlejaSvg;
-      break;
-    case "Erigeron annuus (L.) Desf.":
-      plantSvg = vergeretteSvg;
-      break;
-    default:
-      plantSvg = placeholderSvg;
-      break;
-  }
-
-  // Si le SVG n'est pas trouvé, renvoie une fleur par défaut
-  return plantSvg || "<g></g>";
+function createFlower(plantImg) {
+  return plantImg
+    ? "images/plants/" + plantImg
+    : "images/plant_placeholder.png";
 
   /*
   return `
@@ -221,7 +205,22 @@ function updateGarden() {
     .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
 
   enter.each(function (d, i) {
-    const flower = createFlower(d.plant.Nom_scientifique);
+    //const flower = createFlower(d.plant.img);
+    const g = d3.select(this);
+    const imgPath = createFlower(d.plant.img);
+
+    // Append SVG image
+    g.append("image")
+      .attr("href", imgPath)
+      .attr("width", 80) // adjust as needed
+      .attr("height", 80) // adjust as needed
+      .attr("transform-origin", "0 0")
+      .attr("transform", "scale(0)")
+      .transition()
+      .delay(i * config.growDelay)
+      .duration(config.animationDuration)
+      .attr("transform", `scale(${d.height / 100})`);
+    /*
     const g = d3.select(this);
 
     g.html(flower);
@@ -232,7 +231,7 @@ function updateGarden() {
       .delay(i * config.growDelay)
       .duration(config.animationDuration)
       .attr("transform", `scale(${d.height / 100})`);
-
+    */
     g.append("text")
       .attr("y", screenHeight - config.groundHeight)
       .attr("x", 0)
