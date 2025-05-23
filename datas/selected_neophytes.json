@@ -25,7 +25,7 @@
     },
     "Taille_min": null,
     "Taille_max": 300,
-    "img": "Buddleja_davidii_Franch.svg"
+    "img": "Buddleja_davidii_Franch.png"
   },
   {
     "taxon_id": 1017510,
@@ -50,7 +50,7 @@
     },
     "Taille_min": 30,
     "Taille_max": 150,
-    "img": "Vergerette_annuelle.svg"
+    "img": "Vergerette_annuelle.png"
   },
   {
     "taxon_id": 1022580,
@@ -78,7 +78,7 @@
     },
     "Taille_min": 300,
     "Taille_max": 500,
-    "img": "Berce_du_Caucase.svg"
+    "img": "Berce_du_Caucase.png"
   },
   {
     "taxon_id": 1024410,
@@ -210,7 +210,8 @@
       "Versant S Alpes": "> 500"
     },
     "Taille_min": null,
-    "Taille_max": 600
+    "Taille_max": 600,
+    "img":"Sumac.png"
   },
   {
     "taxon_id": 1038500,
@@ -261,7 +262,8 @@
       "Versant S Alpes": "51-500"
     },
     "Taille_min": 40,
-    "Taille_max": 60
+    "Taille_max": 60,
+    "img":"senecon_sud_africain.png"
   },
   {
     "taxon_id": 1047110,

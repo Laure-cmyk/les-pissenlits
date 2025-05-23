@@ -128,9 +128,9 @@ specific-plant #plant-svg {
   justify-content: center;
 }
 
-specific-plant #plant-svg svg {
+specific-plant #plant-svg img {
   width: 200px;
-  height: 200px;
+  
 }
 
 

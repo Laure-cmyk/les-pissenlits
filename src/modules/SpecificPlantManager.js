@@ -10,14 +10,8 @@ export async function displaySpecificPlants(plants) {
   const menaceModal = document.createElement(`menace-modal`);
   const provenanceMap = document.querySelector("#map");
 
-  let svg;
-
-  try {
-    svg = await loadSvg("/images/plants/" + plants[0].img);
-  } catch (e) {
-    console.error(`Failed to load SVG`, e);
-    svg = await loadSvg("/images/plant_placeholder.svg");
-  }
+  let svg = null;
+  svg = "<img src='images/plants/" + plants[0].img + "'>";
 
   specificPlant.setAttribute("svg", svg);
   specificPlant.setAttribute("name", plants[0].Name.Nom_FR);
@@ -36,7 +30,7 @@ export async function displaySpecificPlants(plants) {
       specificPlant.getAttribute("description")
     );
 
-    const tempSvg = document.querySelector("#plant-svg svg");
+    const tempSvg = document.querySelector("#plant-svg img");
     menaceModal.setAttribute("svg", tempSvg ? tempSvg.outerHTML : "");
   });
 

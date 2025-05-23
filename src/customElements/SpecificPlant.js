@@ -7,7 +7,14 @@ import { loadSvg } from "@/lib/fetcher.js";
 let placeHolder = await loadSvg("/images/plant_placeholder.svg");
 
 class SpecificPlant extends HTMLElement {
-  static observedAttributes = ["name", "latin", "description", "plants","svg","habitus"];
+  static observedAttributes = [
+    "name",
+    "latin",
+    "description",
+    "plants",
+    "svg",
+    "habitus",
+  ];
 
   plants = [];
 
@@ -52,12 +59,12 @@ class SpecificPlant extends HTMLElement {
         const plantItems = this.querySelectorAll(".plant-item");
         plantItems.forEach((i) => i.classList.remove("active"));
 
-
         this.setAttribute("name", plantItem.dataset.name);
         this.setAttribute("latin", plantItem.dataset.nameLatin);
         this.setAttribute("habitus", plantItem.dataset.habitus);
         this.setAttribute("description", plantItem.dataset.description);
 
+        /*
         let svg = null;
         try {
           if (plantItem.dataset.svg) {
@@ -69,9 +76,15 @@ class SpecificPlant extends HTMLElement {
         } catch (e) {
           svg = placeHolder;
         }
+          */
 
+        let svg = null;
+        if (plantItem.dataset.svg) {
+          svg = "<img src='images/plants/" + plantItem.dataset.svg + "'>";
+        } else {
+          svg = "<img src='images/plant_placeholder.svg'>";
+        }
         this.setAttribute("svg", svg);
-
       });
       // Highlight the active item
       if (
